@@ -1,0 +1,11 @@
+C:\Users\reybi\Desktop\ProyectoTOO\bin\Debug\ProyectoTOO.exe.config
+C:\Users\reybi\Desktop\ProyectoTOO\bin\Debug\ProyectoTOO.exe
+C:\Users\reybi\Desktop\ProyectoTOO\bin\Debug\ProyectoTOO.pdb
+C:\Users\reybi\Desktop\ProyectoTOO\obj\Debug\ProyectoTOO.csproj.AssemblyReference.cache
+C:\Users\reybi\Desktop\ProyectoTOO\obj\Debug\ProyectoTOO.csproj.SuggestedBindingRedirects.cache
+C:\Users\reybi\Desktop\ProyectoTOO\obj\Debug\ProyectoTOO.Properties.Resources.resources
+C:\Users\reybi\Desktop\ProyectoTOO\obj\Debug\ProyectoTOO.csproj.GenerateResource.cache
+C:\Users\reybi\Desktop\ProyectoTOO\obj\Debug\ProyectoTOO.csproj.CoreCompileInputs.cache
+C:\Users\reybi\Desktop\ProyectoTOO\obj\Debug\ProyectoTOO.exe
+C:\Users\reybi\Desktop\ProyectoTOO\obj\Debug\ProyectoTOO.pdb
+C:\Users\reybi\Desktop\ProyectoTOO\obj\Debug\ProyectoTOO.viewPrincipal.resources
