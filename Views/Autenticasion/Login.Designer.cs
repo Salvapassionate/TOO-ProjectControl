@@ -51,6 +51,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(223)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -60,8 +61,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1182, 753);
@@ -71,8 +72,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
-            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.panel2.Controls.Add(this.pnelAutenticar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(560, 0);
@@ -83,8 +83,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(234, 63);
+            this.pictureBox2.Location = new System.Drawing.Point(174, 342);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(157, 122);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -95,7 +96,6 @@
             // 
             this.pnelAutenticar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pnelAutenticar.AutoSize = true;
-            this.pnelAutenticar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnelAutenticar.Controls.Add(this.btnCambiarContraseña);
             this.pnelAutenticar.Controls.Add(this.btnRegistrarse);
             this.pnelAutenticar.Controls.Add(this.textBox1);
@@ -114,8 +114,8 @@
             this.btnCambiarContraseña.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCambiarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarContraseña.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnCambiarContraseña.Location = new System.Drawing.Point(245, 393);
+            this.btnCambiarContraseña.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCambiarContraseña.Location = new System.Drawing.Point(340, 393);
             this.btnCambiarContraseña.Name = "btnCambiarContraseña";
             this.btnCambiarContraseña.Size = new System.Drawing.Size(183, 22);
             this.btnCambiarContraseña.TabIndex = 7;
@@ -130,8 +130,8 @@
             this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarse.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnRegistrarse.Location = new System.Drawing.Point(54, 393);
+            this.btnRegistrarse.ForeColor = System.Drawing.Color.DimGray;
+            this.btnRegistrarse.Location = new System.Drawing.Point(87, 393);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(122, 22);
             this.btnRegistrarse.TabIndex = 6;
@@ -142,10 +142,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.LightGray;
+            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
             this.textBox1.Location = new System.Drawing.Point(54, 238);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -155,10 +155,10 @@
             // 
             // txtUser
             // 
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUser.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.ForeColor = System.Drawing.Color.LightGray;
+            this.txtUser.ForeColor = System.Drawing.Color.DimGray;
             this.txtUser.Location = new System.Drawing.Point(54, 110);
             this.txtUser.Multiline = true;
             this.txtUser.Name = "txtUser";
@@ -170,7 +170,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(50, 191);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 24);
@@ -181,7 +181,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(50, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 24);
@@ -190,15 +190,15 @@
             // 
             // btnAutenticar
             // 
-            this.btnAutenticar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(214)))), ((int)(((byte)(194)))));
+            this.btnAutenticar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAutenticar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAutenticar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumAquamarine;
             this.btnAutenticar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAutenticar.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAutenticar.ForeColor = System.Drawing.Color.White;
-            this.btnAutenticar.Location = new System.Drawing.Point(54, 316);
+            this.btnAutenticar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAutenticar.Location = new System.Drawing.Point(91, 310);
             this.btnAutenticar.Name = "btnAutenticar";
-            this.btnAutenticar.Size = new System.Drawing.Size(129, 50);
+            this.btnAutenticar.Size = new System.Drawing.Size(354, 50);
             this.btnAutenticar.TabIndex = 1;
             this.btnAutenticar.Text = "Ingresar";
             this.btnAutenticar.UseVisualStyleBackColor = false;
