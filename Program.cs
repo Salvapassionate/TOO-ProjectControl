@@ -1,10 +1,12 @@
 ﻿using ProyectoTOO.Views;
 using ProyectoTOO.Views.Autenticasion;
+using ProyectoTOO.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace ProyectoTOO
 {
