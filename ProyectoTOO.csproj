@@ -102,9 +102,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Proyecto.cs" />
     <Compile Include="Model\ConexionBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validaciones\Validador.cs" />
     <Compile Include="Views\Autenticasion\CambiarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,7 +178,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="Img\.ico\" />
     <Folder Include="Img\.png\" />
   </ItemGroup>

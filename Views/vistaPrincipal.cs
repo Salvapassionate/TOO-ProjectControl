@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoTOO.Model;
+using ProyectoTOO.Views;
 
 namespace ProyectoTOO.Views
 {
@@ -30,5 +32,6 @@ namespace ProyectoTOO.Views
             NuevoProyecto.ShowDialog();
 
         }
+
     }
 }
