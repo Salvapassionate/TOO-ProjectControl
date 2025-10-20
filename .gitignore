@@ -1,0 +1,29 @@
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Build results
+bin/
+obj/
+
+# Debug / Release folders
+Debug/
+Release/
+
+# Auto-generated
+Generated Files/
+TestResults/
+*.db
+*.db-shm
+*.db-wal
+
+# Resharper / Rider / Copilot
+.idea/
+*.DotSettings
+CopilotIndices/
+
+# Other
+*.cache
+*.log
