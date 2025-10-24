@@ -163,7 +163,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(445, 30);
             this.txtpassword.TabIndex = 5;
-            this.txtpassword.Text = "Ingrese su contraseña";
+            //this.txtpassword.Text = "Ingrese su contraseña";
             // 
             // txtUser
             // 
@@ -176,7 +176,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(445, 30);
             this.txtUser.TabIndex = 4;
-            this.txtUser.Text = "Ingrese su nombre de usuario";
+            //this.txtUser.Text = "Ingrese su nombre de usuario";
             // 
             // label2
             // 
