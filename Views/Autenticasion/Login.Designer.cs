@@ -30,21 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnelAutenticar = new System.Windows.Forms.Panel();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.btnCambiarContraseña = new System.Windows.Forms.Label();
             this.btnRegistrarse = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAutenticar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnelAutenticar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 753);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(174, 342);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(157, 122);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -80,25 +93,14 @@
             this.panel2.Size = new System.Drawing.Size(622, 753);
             this.panel2.TabIndex = 0;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(174, 342);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(157, 122);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // pnelAutenticar
             // 
             this.pnelAutenticar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pnelAutenticar.AutoSize = true;
+            this.pnelAutenticar.Controls.Add(this.lblResultado);
             this.pnelAutenticar.Controls.Add(this.btnCambiarContraseña);
             this.pnelAutenticar.Controls.Add(this.btnRegistrarse);
-            this.pnelAutenticar.Controls.Add(this.textBox1);
+            this.pnelAutenticar.Controls.Add(this.txtpassword);
             this.pnelAutenticar.Controls.Add(this.txtUser);
             this.pnelAutenticar.Controls.Add(this.label2);
             this.pnelAutenticar.Controls.Add(this.label1);
@@ -107,6 +109,16 @@
             this.pnelAutenticar.Name = "pnelAutenticar";
             this.pnelAutenticar.Size = new System.Drawing.Size(622, 505);
             this.pnelAutenticar.TabIndex = 0;
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.BackColor = System.Drawing.Color.DimGray;
+            this.lblResultado.Location = new System.Drawing.Point(243, 421);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(83, 16);
+            this.lblResultado.TabIndex = 8;
+            this.lblResultado.Text = "lblResultado";
             // 
             // btnCambiarContraseña
             // 
@@ -140,18 +152,18 @@
             this.btnRegistrarse.MouseEnter += new System.EventHandler(this.btnRegistrarse_MouseEnter);
             this.btnRegistrarse.MouseLeave += new System.EventHandler(this.btnRegistrarse_MouseLeave);
             // 
-            // textBox1
+            // txtpassword
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(54, 238);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(445, 30);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Ingrese su contraseña";
+            this.txtpassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.txtpassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpassword.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassword.ForeColor = System.Drawing.Color.DimGray;
+            this.txtpassword.Location = new System.Drawing.Point(54, 238);
+            this.txtpassword.Multiline = true;
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.Size = new System.Drawing.Size(445, 30);
+            this.txtpassword.TabIndex = 5;
+            this.txtpassword.Text = "Ingrese su contraseña";
             // 
             // txtUser
             // 
@@ -202,6 +214,7 @@
             this.btnAutenticar.TabIndex = 1;
             this.btnAutenticar.Text = "Ingresar";
             this.btnAutenticar.UseVisualStyleBackColor = false;
+            this.btnAutenticar.Click += new System.EventHandler(this.btnAutenticar_Click);
             // 
             // Login
             // 
@@ -214,10 +227,10 @@
             this.Name = "Login";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnelAutenticar.ResumeLayout(false);
             this.pnelAutenticar.PerformLayout();
             this.ResumeLayout(false);
@@ -235,8 +248,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.Label btnRegistrarse;
         private System.Windows.Forms.Label btnCambiarContraseña;
+        private System.Windows.Forms.Label lblResultado;
     }
 }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using ProyectoTOO.Controller;
+using ProyectoTOO.Model;
+using ProyectoTOO.Views;
+using ProyectoTOO.Views.Autenticasion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoTOO.Views;
-using ProyectoTOO.Views.Autenticasion;
+
+
 
 namespace ProyectoTOO.Views
 {
@@ -39,6 +43,7 @@ namespace ProyectoTOO.Views
         {
             Registro FormRegistro = new Registro();
             FormRegistro.ShowDialog();
+            this.Hide();
         }
 
         private void btnCambiarContraseña_MouseEnter(object sender, EventArgs e)
@@ -55,8 +60,35 @@ namespace ProyectoTOO.Views
 
         private void btnCambiarContraseña_Click(object sender, EventArgs e)
         {
-            CambiarContraseña FormCambioContraseña = new CambiarContraseña();
-            FormCambioContraseña.ShowDialog();
+            CambiarContraseña form = new CambiarContraseña(usuarioLogueado);
+            form.ShowDialog();
+        }
+        Usuario usuarioLogueado;
+        UsuarioController controller = new UsuarioController();
+
+        private void btnAutenticar_Click(object sender, EventArgs e)
+        {
+            string correo = txtUser.Text;
+            string pass = txtpassword.Text;
+
+            Usuario usuario = controller.Login(correo, pass);
+
+            if (usuario != null)
+            {
+                usuarioLogueado = usuario; 
+
+                lblResultado.ForeColor = Color.LightGreen;
+                lblResultado.Text = "✅ Bienvenido " + usuario.Nombre;
+
+                this.Hide();
+                var menu = new vistaPrincipal(usuarioLogueado);
+                menu.Show();
+            }
+            else
+            {
+                lblResultado.ForeColor = Color.Red;
+                lblResultado.Text = "❌ Credenciales incorrectas.";
+            }
         }
     }
 }

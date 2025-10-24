@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProyectoTOO.Controller;
+using ProyectoTOO.Model;
+using ProyectoTOO.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,18 +10,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoTOO.Model;
-using ProyectoTOO.Views;
 
 namespace ProyectoTOO.Views
 {
     public partial class vistaPrincipal : Form
     {
-        public vistaPrincipal()
+        private Usuario _usuario;
+
+        public vistaPrincipal(Usuario usuario)
         {
             InitializeComponent();
-        }
+            _usuario = usuario;
 
+            
+        }
         //Este evento es para cerrar el formulario de la vista principal y esta relacionada al menu salir 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {

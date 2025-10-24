@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ProyectoTOO.Model;
+using ProyectoTOO.Validaciones;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProyectoTOO.Validaciones;
 
 namespace ProyectoTOO.Controller
 {
@@ -156,6 +157,24 @@ namespace ProyectoTOO.Controller
         public AreaTematica AreaTematica {get { return areaTematica; }set { areaTematica = value; }}
 
         public DirectorProyecto DirectorProyecto{get { return directorproyecto; }set { directorproyecto = value; }}
+    }
+
+    public class UsuarioController
+    {
+        private UsuarioModel model = new UsuarioModel();
+
+        public Usuario Login(string correo, string password)
+        {
+            return model.Autenticar(correo, password);
+        }
+        public bool RegistrarUsuario(Usuario usuario)
+        {
+            return model.Registrar(usuario);
+        }
+        public bool CambiarPassword(int idUsuario, string nuevaPass)
+        {
+            return model.CambiarPassword(idUsuario, nuevaPass);
+        }
     }
 
 
