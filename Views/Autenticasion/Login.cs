@@ -42,8 +42,10 @@ namespace ProyectoTOO.Views
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
             Registro FormRegistro = new Registro();
+            //var menu = new Login();
+            //this.Close();
             FormRegistro.ShowDialog();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCambiarContraseña_MouseEnter(object sender, EventArgs e)
@@ -60,7 +62,8 @@ namespace ProyectoTOO.Views
 
         private void btnCambiarContraseña_Click(object sender, EventArgs e)
         {
-            CambiarContraseña form = new CambiarContraseña(usuarioLogueado);
+            //CambiarContraseña form = new CambiarContraseña(usuarioLogueado);
+            CambiarContraseña form = new CambiarContraseña();
             form.ShowDialog();
         }
         Usuario usuarioLogueado;
@@ -81,7 +84,7 @@ namespace ProyectoTOO.Views
                 lblResultado.Text = "✅ Bienvenido " + usuario.Nombre;
 
                 this.Hide();
-                var menu = new vistaPrincipal();
+                var menu = new vistaPrincipal(usuarioLogueado);
                 menu.Show();
             }
             else
@@ -89,11 +92,6 @@ namespace ProyectoTOO.Views
                 lblResultado.ForeColor = Color.Red;
                 lblResultado.Text = "❌ Credenciales incorrectas.";
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

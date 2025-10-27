@@ -50,7 +50,7 @@
             this.investigadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoAvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelPresentacion = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +102,6 @@
             this.agregarAreaTematicaToolStripMenuItem.Name = "agregarAreaTematicaToolStripMenuItem";
             this.agregarAreaTematicaToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
             this.agregarAreaTematicaToolStripMenuItem.Text = "Agregar area tematica";
-            this.agregarAreaTematicaToolStripMenuItem.Click += new System.EventHandler(this.agregarAreaTematicaToolStripMenuItem_Click);
             // 
             // editarCuentaToolStripMenuItem
             // 
@@ -255,25 +254,26 @@
             this.nosotrosToolStripMenuItem.Size = new System.Drawing.Size(171, 68);
             this.nosotrosToolStripMenuItem.Text = "Nosotros";
             // 
-            // panelPresentacion
+            // panel1
             // 
-            this.panelPresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
-            this.panelPresentacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPresentacion.Location = new System.Drawing.Point(0, 72);
-            this.panelPresentacion.Name = "panelPresentacion";
-            this.panelPresentacion.Size = new System.Drawing.Size(1348, 649);
-            this.panelPresentacion.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1348, 649);
+            this.panel1.TabIndex = 1;
             // 
             // vistaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 721);
-            this.Controls.Add(this.panelPresentacion);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "vistaPrincipal";
+            this.Text = "SCPI";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -295,7 +295,7 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarProyectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarProyectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarCuentaToolStripMenuItem;
-        private System.Windows.Forms.Panel panelPresentacion;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem productosDesarrolladosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosEnDesarrolloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarAreaTematicaToolStripMenuItem;

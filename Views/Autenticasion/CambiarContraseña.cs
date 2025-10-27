@@ -17,33 +17,46 @@ namespace ProyectoTOO.Views.Autenticasion
         private Usuario usuarioLogueado;
         UsuarioController controller = new UsuarioController();
 
-        public CambiarContraseña(Usuario usuario)
+        //public CambiarContraseña(Usuario usuario)
+        //{
+        //    usuarioLogueado = usuario;
+        //    txtUsuario.Text = usuarioLogueado.Correo;
+        //    txtUsuario.ReadOnly = true;
+
+        //}
+        public CambiarContraseña()
         {
             InitializeComponent();
-            usuarioLogueado = usuario;
-
+            txtUsuario.ReadOnly = false; 
         }
-        private void btnGuardarContraseña_Click(object sender, EventArgs e)
+
+        private void btnGuardarContraseña_Click_1(object sender, EventArgs e)
         {
             string pass1 = textBox2.Text;
             string pass2 = textBox3.Text;
-
+            string correo = txtUsuario.Text.Trim();
+           
             if (pass1 != pass2)
             {
                 MessageBox.Show("Las contraseñas no coinciden");
                 return;
             }
 
-            bool ok = controller.CambiarPassword(usuarioLogueado.IdUsuario, pass1);
+
+            Usuario u = controller.BuscarUsuarioPorCorreo(correo);
+
+            if (u == null)
+            {
+                MessageBox.Show("No existe un usuario con ese correo");
+                return;
+            }
+
+            bool ok = controller.CambiarPassword(u.IdUsuario, pass1);
 
             if (ok)
             {
                 MessageBox.Show("✅ Contraseña actualizada correctamente");
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("❌ Error al actualizar la contraseña");
             }
         }
     }
