@@ -163,7 +163,6 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(445, 30);
             this.txtpassword.TabIndex = 5;
-            //this.txtpassword.Text = "Ingrese su contraseña";
             // 
             // txtUser
             // 
@@ -176,7 +175,6 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(445, 30);
             this.txtUser.TabIndex = 4;
-            //this.txtUser.Text = "Ingrese su nombre de usuario";
             // 
             // label2
             // 
@@ -226,6 +224,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

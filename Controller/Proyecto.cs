@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProyectoTOO.Controller
 {
@@ -54,22 +55,22 @@ namespace ProyectoTOO.Controller
     public class DirectorProyecto: Usuario
     {
         private int idDirectorProyecto;
-        private InstitucionEducativa institucion;
+        private int idInstitucion;
         public DirectorProyecto() { }
 
         public int IdDirectorProyecto { get { return idDirectorProyecto; } set { idDirectorProyecto = value; } }
-        public InstitucionEducativa Institucion {get { return institucion; }set { institucion = value; }}
+        public int IdInstitucion { get { return idInstitucion; }set { idInstitucion = value; }}
 
     }
 
     public class Investigador:Usuario
     {
         private int idInvestigador;
-        private InstitucionEducativa institucion;
+        private int idInstitucion;
         public Investigador() { }
 
         public int IdInvestigador { get { return idInvestigador; } set { idInvestigador = value; } }
-        public InstitucionEducativa Institucion { get { return institucion; } set { institucion = value; } }
+        public int IdInstitucion { get { return idInstitucion; } set { idInstitucion = value; } }
 
     }
 
@@ -100,11 +101,57 @@ namespace ProyectoTOO.Controller
 
         public AreaTematica() { }
 
+        public AreaTematica(string nombreArea, string descripcionArea) {
+            
+            this.nombreArea = nombreArea;
+            this.descripcionArea = descripcionArea;
+            
+        }
+
 
         public int IdAreaTematica { get { return idAreaTematica; } set { idAreaTematica = value; } }
         public string NombreArea{get { return nombreArea; }set { nombreArea = value; }}
 
         public string DescripcionArea{get { return descripcionArea; }set { descripcionArea = value; }}
+
+
+        /// <summary>
+        /// Este metodo hace un insert en la tabla de areas tematicas
+        /// </summary>
+        /// <param name="areaTematica"></param>
+        public void crearArea(AreaTematica areaTematica)
+        {
+            AreaTematicaModel areaTematicaModel = new AreaTematicaModel();
+
+            areaTematicaModel.insertarAreaTematica(areaTematica);
+
+
+        }
+
+        /// <summary>
+        /// Este metodo verifica si existen areas tematicas que mostrar si no existen devuelve false
+        /// </summary>
+        /// <returns></returns>
+        public bool hayAreasTematicas()
+        {
+
+            bool hayElemtosEnlaLista = false;
+
+            AreaTematicaModel area = new AreaTematicaModel();
+
+            List<AreaTematica> lista = area.listaAreaTematica();
+
+            if (lista != null && lista.Count > 0)
+            {
+                hayElemtosEnlaLista = true;
+            }
+
+            return hayElemtosEnlaLista;
+        }
+
+
+
+
     }
 
     public class Producto
@@ -114,7 +161,7 @@ namespace ProyectoTOO.Controller
         private string tipoProducto;
         private DateTime fechaEntrega;
         private string descripcionProducto;
-        private Proyecto proyecto;
+        private int idProyecto;
 
         public Producto() { }
 
@@ -127,7 +174,7 @@ namespace ProyectoTOO.Controller
 
         public string DescripcionProducto{get { return descripcionProducto; }set { descripcionProducto = value; }}
 
-        public Proyecto Proyecto {get { return proyecto; } set { proyecto = value; }}
+        public int IdProyecto { get { return idProyecto; } set { idProyecto = value; }}
     }
 
     public class Proyecto
@@ -138,8 +185,8 @@ namespace ProyectoTOO.Controller
         private DateTime fechaInicio;
         private DateTime fechafin;
         private string estado;
-        private AreaTematica areaTematica;
-        private DirectorProyecto directorproyecto;
+        private int idareaTematica;
+        private int idDirectorproyecto;
 
         public Proyecto() { }
 
@@ -154,9 +201,9 @@ namespace ProyectoTOO.Controller
 
         public string Estado {get { return estado; }set { estado = value; }}
 
-        public AreaTematica AreaTematica {get { return areaTematica; }set { areaTematica = value; }}
+        public int IdAreaTematica {get { return idareaTematica; }set { idareaTematica = value; }}
 
-        public DirectorProyecto DirectorProyecto{get { return directorproyecto; }set { directorproyecto = value; }}
+        public int IdDirectorProyecto{get { return idDirectorproyecto; }set { idDirectorproyecto = value; }}
     }
 
     public class UsuarioController

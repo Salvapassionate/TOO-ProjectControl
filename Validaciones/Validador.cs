@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Drawing;
 
 namespace ProyectoTOO.Validaciones
 {
@@ -27,19 +29,62 @@ namespace ProyectoTOO.Validaciones
         /// </summary>
         /// <param name="texto"></param>
         /// <returns></returns>
-        public static bool SoloLetras(string texto)
+        public static void SoloLetras(string texto, KeyPressEventArgs e, TextBox  cajaTexto)
         {
-            return Regex.IsMatch(texto, @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$");
+            // Verifica si el carácter es letra o tecla de control (como Backspace)
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                cajaTexto.BackColor = Color.MistyRose;//Cabiamos el color de fondo del Textbox
+                cajaTexto.ForeColor = Color.Black;
+
+                e.Handled = true; // Cancela la tecla
+                MessageBox.Show(
+                    "¡ Solo se puede agragar texto, por ejemplo Biologia ! ",// Texto del mensaje
+                    "Advertencia",// Titulo del mensaje
+                    MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                    MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
+                );
+            }
+            else
+            {
+                // Restaurar color normal si el valor es válido
+                cajaTexto.BackColor = Color.FromArgb(54, 73, 96);
+                cajaTexto.ForeColor = Color.White;
+            }
+
         }
 
         /// <summary>
-        /// Verifica si la cadena contiene solo números
+        /// Verifica si la cadena contiene solo números del 0 al 9
         /// </summary>
         /// <param name="texto"></param>
         /// <returns></returns>
-        public static bool SoloNumeros(string texto)
+        public static void SoloNumeros(string texto, KeyPressEventArgs e, TextBox cajaTexto)
         {
-            return Regex.IsMatch(texto, @"^\d+$");
+            // Verifica si el carácter es número o tecla de control (como Backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // Cambiar el color del fondo para indicar error
+                cajaTexto.BackColor = Color.MistyRose;
+                cajaTexto.ForeColor = Color.Black;
+
+                // Cancelar la tecla
+                e.Handled = true;
+
+                // Mostrar mensaje de advertencia
+                MessageBox.Show(
+                    "¡ Solo se permiten números del 0 al 9 !",
+                    "Advertencia",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+            }
+            else
+            {
+                // Restaurar color normal si el valor es válido
+                cajaTexto.BackColor = Color.FromArgb(54, 73, 96);
+                cajaTexto.ForeColor = Color.White;
+            }
         }
 
         /// <summary>

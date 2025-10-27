@@ -81,7 +81,7 @@ namespace ProyectoTOO.Views
                 lblResultado.Text = "✅ Bienvenido " + usuario.Nombre;
 
                 this.Hide();
-                var menu = new vistaPrincipal(usuarioLogueado);
+                var menu = new vistaPrincipal();
                 menu.Show();
             }
             else
@@ -89,6 +89,11 @@ namespace ProyectoTOO.Views
                 lblResultado.ForeColor = Color.Red;
                 lblResultado.Text = "❌ Credenciales incorrectas.";
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

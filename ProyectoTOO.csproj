@@ -103,7 +103,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Proyecto.cs" />
+    <Compile Include="Model\AreaTematicaModel.cs" />
     <Compile Include="Model\ConexionBD.cs" />
+    <Compile Include="Model\InstitucionModel.cs" />
+    <Compile Include="Model\ProyectoModel.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +116,12 @@
     </Compile>
     <Compile Include="Views\Autenticasion\CambiarContraseña.Designer.cs">
       <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormularioAreaTematica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormularioAreaTematica.Designer.cs">
+      <DependentUpon>FormularioAreaTematica.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormularioProyecto.cs">
       <SubType>Form</SubType>
@@ -150,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Autenticasion\CambiarContraseña.resx">
       <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormularioAreaTematica.resx">
+      <DependentUpon>FormularioAreaTematica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormularioProyecto.resx">
       <DependentUpon>FormularioProyecto.cs</DependentUpon>

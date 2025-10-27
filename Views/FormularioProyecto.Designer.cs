@@ -34,9 +34,9 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbxAreasTematicas = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnRegistrarProyecto = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -48,7 +48,7 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrarProyecto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,9 +69,9 @@
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbxAreasTematicas);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.btnRegistrarProyecto);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label4);
@@ -114,15 +114,13 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "AREA TEMATICA";
             // 
-            // comboBox1
+            // cmbxAreasTematicas
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "SELECCIONAR AREA TEMATICA"});
-            this.comboBox1.Location = new System.Drawing.Point(308, 321);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(278, 30);
-            this.comboBox1.TabIndex = 15;
+            this.cmbxAreasTematicas.FormattingEnabled = true;
+            this.cmbxAreasTematicas.Location = new System.Drawing.Point(308, 321);
+            this.cmbxAreasTematicas.Name = "cmbxAreasTematicas";
+            this.cmbxAreasTematicas.Size = new System.Drawing.Size(278, 30);
+            this.cmbxAreasTematicas.TabIndex = 15;
             // 
             // label5
             // 
@@ -135,15 +133,18 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "FORMULARIO PARA EL REGISTRO DE NUEVOS PROYECTOS";
             // 
-            // pictureBox2
+            // btnRegistrarProyecto
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(516, 628);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.btnRegistrarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarProyecto.Image")));
+            this.btnRegistrarProyecto.Location = new System.Drawing.Point(492, 628);
+            this.btnRegistrarProyecto.Name = "btnRegistrarProyecto";
+            this.btnRegistrarProyecto.Size = new System.Drawing.Size(94, 73);
+            this.btnRegistrarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnRegistrarProyecto.TabIndex = 13;
+            this.btnRegistrarProyecto.TabStop = false;
+            this.btnRegistrarProyecto.Click += new System.EventHandler(this.btnRegistrarProyecto_Click);
+            this.btnRegistrarProyecto.MouseEnter += new System.EventHandler(this.btnRegistrarProyecto_MouseEnter);
+            this.btnRegistrarProyecto.MouseLeave += new System.EventHandler(this.btnRegistrarProyecto_MouseLeave);
             // 
             // textBox3
             // 
@@ -259,10 +260,11 @@
             this.MaximizeBox = false;
             this.Name = "FormularioProyecto";
             this.Text = "Nuevo proyecto";
+            this.Load += new System.EventHandler(this.FormularioProyecto_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrarProyecto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -282,9 +284,9 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnRegistrarProyecto;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbxAreasTematicas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;

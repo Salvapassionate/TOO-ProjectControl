@@ -15,14 +15,10 @@ namespace ProyectoTOO.Views
 {
     public partial class vistaPrincipal : Form
     {
-        private Usuario _usuario;
 
-        public vistaPrincipal(Usuario usuario)
+        public vistaPrincipal()
         {
             InitializeComponent();
-            _usuario = usuario;
-
-            
         }
         //Este evento es para cerrar el formulario de la vista principal y esta relacionada al menu salir 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,5 +34,10 @@ namespace ProyectoTOO.Views
 
         }
 
+        private void agregarAreaTematicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormularioAreaTematica formularioAreaTematica = new FormularioAreaTematica();
+            formularioAreaTematica.ShowDialog();
+        }
     }
 }

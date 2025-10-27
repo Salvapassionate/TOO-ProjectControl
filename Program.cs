@@ -20,7 +20,8 @@ namespace ProyectoTOO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
+            Application.Run(new vistaPrincipal());
             //Application.Run(new FormularioProyecto());
             //Application.Run(new Login());
             //Application.Run(new Registro());
