@@ -83,9 +83,12 @@ namespace ProyectoTOO.Views
                 lblResultado.ForeColor = Color.LightGreen;
                 lblResultado.Text = "✅ Bienvenido " + usuario.Nombre;
 
+                //this.Hide();
+                //var menu = new vistaPrincipal(usuarioLogueado);
+                //menu.Show();
+                var principal = new vistaPrincipal(usuario);
+                principal.Show();
                 this.Hide();
-                var menu = new vistaPrincipal(usuarioLogueado);
-                menu.Show();
             }
             else
             {

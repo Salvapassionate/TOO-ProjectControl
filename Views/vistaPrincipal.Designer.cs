@@ -34,6 +34,7 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarAreaTematicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,9 @@
             this.estadoAvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblBienvenida = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,6 +81,7 @@
             this.nuevoToolStripMenuItem,
             this.agregarAreaTematicaToolStripMenuItem,
             this.editarCuentaToolStripMenuItem,
+            this.gestionDeUsuariosToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.archivoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("archivoToolStripMenuItem.Image")));
@@ -110,6 +114,14 @@
             this.editarCuentaToolStripMenuItem.Name = "editarCuentaToolStripMenuItem";
             this.editarCuentaToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
             this.editarCuentaToolStripMenuItem.Text = "Editar cuenta";
+            // 
+            // gestionDeUsuariosToolStripMenuItem
+            // 
+            this.gestionDeUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("gestionDeUsuariosToolStripMenuItem.Image")));
+            this.gestionDeUsuariosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
+            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
+            this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de usuarios";
             // 
             // salirToolStripMenuItem
             // 
@@ -257,11 +269,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.panel1.Controls.Add(this.lblBienvenida);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 72);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1348, 649);
             this.panel1.TabIndex = 1;
+            // 
+            // lblBienvenida
+            // 
+            this.lblBienvenida.AutoSize = true;
+            this.lblBienvenida.Location = new System.Drawing.Point(571, 132);
+            this.lblBienvenida.Name = "lblBienvenida";
+            this.lblBienvenida.Size = new System.Drawing.Size(89, 16);
+            this.lblBienvenida.TabIndex = 0;
+            this.lblBienvenida.Text = "lblBienvenida";
             // 
             // vistaPrincipal
             // 
@@ -276,6 +298,8 @@
             this.Text = "SCPI";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +329,9 @@
         private System.Windows.Forms.ToolStripMenuItem estadoAvanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nosotrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarInvestigadoresToolStripMenuItem;
+        //private System.Windows.Forms.ToolStripMenuItem gestionUsuariosToolStripMenuItem;
+        //private System.Windows.Forms.Label lblBienvenida;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.Label lblBienvenida;
     }
 }

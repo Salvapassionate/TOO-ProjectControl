@@ -22,7 +22,29 @@ namespace ProyectoTOO.Views
             InitializeComponent();
             _usuario = usuario;
 
-            
+            lblBienvenida.Text = $"👋 Bienvenido {_usuario.Nombre} ({_usuario.Rol})";
+
+            // Según el rol
+            ConfigurarMenusPorRol();
+
+        }
+
+        private void ConfigurarMenusPorRol()
+        {
+            if (_usuario.Rol == "Director")
+            {
+                // Director ve todo
+                gestionDeUsuariosToolStripMenuItem.Visible = true;
+                agregarAreaTematicaToolStripMenuItem.Visible = true;
+                reportesToolStripMenuItem.Visible = true;
+            }
+            else if (_usuario.Rol == "Investigador")
+            {
+                // Usuario normal: ocultar cosas administrativas
+                gestionDeUsuariosToolStripMenuItem.Visible = false;
+                agregarAreaTematicaToolStripMenuItem.Visible = false;
+                reportesToolStripMenuItem.Visible = false;
+            }
         }
         //Este evento es para cerrar el formulario de la vista principal y esta relacionada al menu salir 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

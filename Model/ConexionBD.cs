@@ -22,9 +22,9 @@ namespace ProyectoTOO.Model
         //variables de conexion 
 
         private string servidor = "localhost";
-        private string bd = "gestion_proyectos";
+        private string bd = "proyectotoo";
         private string usuario = "root";
-        private string clave = "Too115";
+        private string clave = "";
         private string puerto = "3306";
 
         /// <summary>
