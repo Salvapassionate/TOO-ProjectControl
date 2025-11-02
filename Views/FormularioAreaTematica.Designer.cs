@@ -51,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(567, 506);
+            this.panel1.Size = new System.Drawing.Size(567, 463);
             this.panel1.TabIndex = 0;
             // 
             // btnAgregarAreaTematica
@@ -62,7 +62,7 @@
             this.btnAgregarAreaTematica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarAreaTematica.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarAreaTematica.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAgregarAreaTematica.Location = new System.Drawing.Point(322, 435);
+            this.btnAgregarAreaTematica.Location = new System.Drawing.Point(333, 387);
             this.btnAgregarAreaTematica.Name = "btnAgregarAreaTematica";
             this.btnAgregarAreaTematica.Size = new System.Drawing.Size(201, 50);
             this.btnAgregarAreaTematica.TabIndex = 11;
@@ -76,7 +76,7 @@
             this.txtDescripcionAreaTematica.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripcionAreaTematica.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcionAreaTematica.ForeColor = System.Drawing.Color.White;
-            this.txtDescripcionAreaTematica.Location = new System.Drawing.Point(12, 308);
+            this.txtDescripcionAreaTematica.Location = new System.Drawing.Point(23, 262);
             this.txtDescripcionAreaTematica.Multiline = true;
             this.txtDescripcionAreaTematica.Name = "txtDescripcionAreaTematica";
             this.txtDescripcionAreaTematica.Size = new System.Drawing.Size(511, 98);
@@ -88,7 +88,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 257);
+            this.label3.Location = new System.Drawing.Point(19, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(262, 24);
             this.label3.TabIndex = 9;
@@ -110,7 +110,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 157);
+            this.label1.Location = new System.Drawing.Point(23, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 24);
             this.label1.TabIndex = 6;
@@ -122,7 +122,7 @@
             this.txtNombreAreaTematica.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreAreaTematica.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreAreaTematica.ForeColor = System.Drawing.Color.White;
-            this.txtNombreAreaTematica.Location = new System.Drawing.Point(12, 196);
+            this.txtNombreAreaTematica.Location = new System.Drawing.Point(23, 150);
             this.txtNombreAreaTematica.Multiline = true;
             this.txtNombreAreaTematica.Name = "txtNombreAreaTematica";
             this.txtNombreAreaTematica.Size = new System.Drawing.Size(511, 30);
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 506);
+            this.ClientSize = new System.Drawing.Size(567, 463);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

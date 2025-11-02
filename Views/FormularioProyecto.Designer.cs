@@ -116,6 +116,7 @@
             // 
             // cmbxAreasTematicas
             // 
+            this.cmbxAreasTematicas.BackColor = System.Drawing.Color.Silver;
             this.cmbxAreasTematicas.FormattingEnabled = true;
             this.cmbxAreasTematicas.Location = new System.Drawing.Point(308, 321);
             this.cmbxAreasTematicas.Name = "cmbxAreasTematicas";
@@ -148,10 +149,10 @@
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.textBox3.BackColor = System.Drawing.Color.Silver;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.LightGray;
+            this.textBox3.ForeColor = System.Drawing.Color.Black;
             this.textBox3.Location = new System.Drawing.Point(34, 507);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
