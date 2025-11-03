@@ -17,20 +17,9 @@ namespace ProyectoTOO.Views
     {
         private Usuario _usuario;
 
-        public vistaPrincipal(Usuario usuario)
+        public vistaPrincipal()
         {
             InitializeComponent();
-            _usuario = usuario;
-
-            // Según el rol
-            ConfigurarMenusPorRol();
-
-            MessageBox.Show(
-                   $"¡ 👋 Bienvenido) ! ",// Texto del mensaje
-                   "Biemvenido",// Titulo del mensaje
-                   MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
-                   MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
-             );
 
 
         }
@@ -54,24 +43,45 @@ namespace ProyectoTOO.Views
             formularioAreaTematica.ShowDialog();
         }
 
-        private void ConfigurarMenusPorRol()
-        {
-            if (_usuario.Rol == "Director")
-            {
-                // Director ve todo
-                agregarAreaTematicaToolStripMenuItem.Visible = true;
-                reportesToolStripMenuItem.Visible = true;
-            }
-            else if (_usuario.Rol == "Investigador")
-            {
-                // Usuario normal: ocultar cosas administrativas
-                agregarAreaTematicaToolStripMenuItem.Visible = false;
-                reportesToolStripMenuItem.Visible = false;
-            }
-        }
-
         private void vistaPrincipal_Load(object sender, EventArgs e)
         {
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+
+            if(login.DialogResult==DialogResult.OK)
+            {
+                _usuario = login.devolverusuarioLogueado();
+            }
+
+            if (_usuario != null) {
+
+                this.Show();
+                this.WindowState = FormWindowState.Maximized;
+                login.Close();
+               
+
+                if (_usuario.Rol == "Director")
+                {
+                    // Director ve todo
+                    agregarAreaTematicaToolStripMenuItem.Visible = true;
+                    reportesToolStripMenuItem.Visible = true;
+                }
+                else if (_usuario.Rol == "Investigador")
+                {
+                    // Usuario normal: ocultar cosas administrativas
+                    agregarAreaTematicaToolStripMenuItem.Visible = false;
+                    reportesToolStripMenuItem.Visible = false;
+                }
+
+
+
+            }
+            else
+            {
+                this.Close();
+            }
+
 
         }
     }

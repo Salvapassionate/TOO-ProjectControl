@@ -26,12 +26,12 @@ namespace ProyectoTOO.Views
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            string nombres = txtNombres.Text;
-            string apellidos = txtApellidos.Text;
-            string correo = txtCorreo.Text;
-            string usuarioTxt = txtUsuario.Text;
-            string pass1 = txtContraseña.Text;
-            string pass2 = txtRepetirContraseña.Text;
+            string nombres = txtNombres.Text.Trim();
+            string apellidos = txtApellidos.Text.Trim();
+            string correo = txtCorreo.Text.Trim();
+            string usuarioTxt = txtUsuario.Text.Trim();
+            string pass1 = txtContraseña.Text.Trim();
+            string pass2 = txtRepetirContraseña.Text.Trim();
             string rol = cmbxRol.SelectedItem.ToString();
             string inst = cmbxInstitucion.SelectedItem.ToString();
 

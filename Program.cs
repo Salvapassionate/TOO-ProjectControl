@@ -28,27 +28,7 @@ namespace ProyectoTOO
             //Application.Run(new Registro());
             //Application.Run(new CambiarContraseña
 
-
-
-            Login login = new Login();
-            Usuario usuario;
-
-            // Obtener usuario logueado
-            usuario = login.devolverusuarioLogueado();
-
-            Application.Run(login);
-
-            if (usuario != null)
-            {
-                // Usuario correcto → abrir formulario principal
-                Application.Run(new vistaPrincipal(usuario));
-            }
-            else
-            {
-                // Usuario nulo o login cerrado → cerrar aplicación
-                Application.Exit();
-            }
-
+            Application.Run(new vistaPrincipal());
 
 
 

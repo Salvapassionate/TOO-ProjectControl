@@ -70,8 +70,8 @@ namespace ProyectoTOO.Views
 
         private void btnAutenticar_Click(object sender, EventArgs e)
         {
-            string correo = BCrypt.Net.BCrypt.HashPassword(txtUser.Text);
-            string pass = txtpassword.Text;
+            string correo = txtUser.Text.Trim();
+            string pass = txtpassword.Text.Trim();
 
 
             if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(pass))
@@ -111,19 +111,39 @@ namespace ProyectoTOO.Views
             {
                 Usuario usuarioController = new Usuario();
 
-                Usuario usuarioLogueado = usuarioController.Login(correo, pass);
+                usuarioLogueado = usuarioController.Login(correo, pass);
 
-                if (usuarioLogueado != null)
+                if (usuarioLogueado == null)
+                {
+                       MessageBox.Show(
+                           "El usuario ingresado no existe, por favor ingrese un usuario valido",// Texto del mensaje
+                           "¡ Advertencia !",// Titulo del mensaje
+                           MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                           MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
+                       );
+
+                    limpiarTextBOX();
+
+                    return;
+                }
+
+
+                // Verificas
+                bool esValida = BCrypt.Net.BCrypt.Verify(pass, usuarioLogueado.Pass);
+
+
+                if (esValida && usuarioLogueado.Estado=="Activo")
                 {
                     devolverusuarioLogueado(); //Devuelve el usuario logueado si existe
 
-                    Application.Run(new FormularioProyecto());
                     MessageBox.Show(
                           "¡Credenciales exitosas",// Texto del mensaje
                           "¡Bienvenido! ",// Titulo del mensaje
                           MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
                           MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
                     );
+                    devolverusuarioLogueado(); //Devuelve el usuario logueado si existe
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
 
 
@@ -135,7 +155,8 @@ namespace ProyectoTOO.Views
                         " ",// Titulo del mensaje
                         MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
                         MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
-                   );
+                    );
+
                     limpiarTextBOX(); // Este metodo limpia los textBOX
 
 

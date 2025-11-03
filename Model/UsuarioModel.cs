@@ -16,29 +16,56 @@ namespace ProyectoTOO.Model
         public Usuario Autenticar(string correo, string password)
         {
             Usuario usuario = null;
-            string query = "SELECT * FROM usuario WHERE correo = @correo AND contrasena = @contrasena";
 
-            MySqlConnection conn = conexion.ObtenerConexion();
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@correo", correo);
-            cmd.Parameters.AddWithValue("@contrasena", password);
-
-            conexion.AbrirConexion();
-            var reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            try
             {
-                usuario = new Usuario
+               
+                string query = "SELECT idUsuario, correo, usuario, contrasena, claveRecuperacion, rol, estadoUsuario, ultimaFechaDeIngreso, fechaRegistro FROM usuario WHERE correo = @correo OR usuario = @correo";
+
+                MySqlConnection conn = conexion.ObtenerConexion();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@correo", correo);
+                cmd.Parameters.AddWithValue("@contrasena", password);
+
+                conexion.AbrirConexion();
+                var reader = cmd.ExecuteReader();
+
+                if (reader.Read())
                 {
-                    IdUsuario = reader.GetString("idUsuario"),
-                    Correo = reader.GetString("correo"),
-                    Pass = reader.GetString("contrasena"),
-                    Rol = reader.GetString("rol")
-                };
+                    usuario = new Usuario
+                    {
+                        IdUsuario = reader.GetString("idUsuario"),
+                        Correo = reader.GetString("correo"),
+                        User = reader.GetString("usuario"),
+                        Pass = reader.GetString("contrasena"),
+                        ClaveRecuperacion = reader.GetString("claveRecuperacion"),
+                        Rol = reader.GetString("rol"),
+                        Estado = reader.GetString("estadoUsuario"),
+                        UltimaFecha = reader.GetDateTime("ultimaFechaDeIngreso"),
+                        FechaRegistro = reader.GetDateTime("fechaRegistro")
+                    };
+                }
+
+                reader.Close();
+                conexion.CerrarConexion();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(
+                    "Las credenciales son incorrectas o el usuario no existe!" + e, // Texto del mensaje
+                    "Error al registrar el Usuario",// Titulo del mensaje
+                    MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                    MessageBoxIcon.Error    // Tipo de icono Information, Warning, Error, Question
+                );
             }
 
-            reader.Close();
-            conexion.CerrarConexion();
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+
             return usuario;
         }
 
