@@ -23,10 +23,13 @@ namespace ProyectoTOO.Model
 
             try
             {
-                string query = "INSERT INTO Institucion (nombreInstitucion, correo) VALUES (@nombre, @correo)";
+                string query = "INSERT INTO Institucion (nombreInstitucion, correoInstitucion, direccion, descripcion ) VALUES (@nombreInstitucion, @correoInstitucion, @direccion, @descripcion)";
                 MySqlCommand cmd = new MySqlCommand(query, conexion.ObtenerConexion());
+
                 cmd.Parameters.AddWithValue("@nombreInstitucion", institucion.NombreInstitucion);
-                cmd.Parameters.AddWithValue("@correo", institucion.Correo);
+                cmd.Parameters.AddWithValue("@correo", institucion.CorreoInstitucion);
+                cmd.Parameters.AddWithValue("@correo", institucion.Direccion);
+                cmd.Parameters.AddWithValue("@correo", institucion.Descripcion);
 
                 conexion.AbrirConexion();
                 cmd.ExecuteNonQuery();
@@ -47,6 +50,53 @@ namespace ProyectoTOO.Model
             {
                 conexion.CerrarConexion();
             }
+        }
+
+
+        public List<InstitucionEducativa> listaInstitusiones()
+        {
+            List<InstitucionEducativa> listaInst = new List<InstitucionEducativa>();
+
+            try
+            {
+                string query = "SELECT idInstitucion, nombreInstitucion, correoInstitucion, direccion, descripcion FROM Institucion";
+                MySqlCommand cmd = new MySqlCommand(query, conexion.ObtenerConexion());
+
+                conexion.AbrirConexion();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    InstitucionEducativa institucion = new InstitucionEducativa()
+                    {
+                        IdInstitucion = reader.GetInt32("idInstitucion"),
+                        NombreInstitucion = reader.GetString("nombreInstitucion"),
+                        CorreoInstitucion = reader.GetString("correoInstitucion"),
+                        Direccion = reader.GetString("direccion"),
+                        Descripcion = reader.GetString("descripcion")
+                    };
+
+                    listaInst.Add(institucion);
+                }
+
+                reader.Close();
+                conexion.CerrarConexion();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(
+                    "No se pudo obtener la lista de Instituciones educativas." + e,
+                    "Error de consulta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+            return listaInst;
         }
 
         public void EliminarInstitucion(InstitucionEducativa institucion)

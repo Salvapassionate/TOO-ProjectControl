@@ -21,6 +21,8 @@ namespace ProyectoTOO.Model
 
         //variables de conexion 
 
+        //Pedro 
+
         private string servidor = "localhost";
         private string bd = "gestion_proyectos";
         private string usuario = "root";

@@ -128,5 +128,14 @@ namespace ProyectoTOO.Validaciones
         {
             return fecha <= DateTime.Now;
         }
+
+        public static void MarcarError(TextBox txt)
+        {
+            Graphics g = txt.CreateGraphics();
+            Pen p = new Pen(Color.Red, 2);
+            Rectangle rect = new Rectangle(0, 0, txt.Width - 1, txt.Height - 1);
+            g.DrawRectangle(p, rect);
+            g.Dispose();
+        }
     }
 }

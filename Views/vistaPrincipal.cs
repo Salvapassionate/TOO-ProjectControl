@@ -15,10 +15,24 @@ namespace ProyectoTOO.Views
 {
     public partial class vistaPrincipal : Form
     {
+        private Usuario _usuario;
 
-        public vistaPrincipal()
+        public vistaPrincipal(Usuario usuario)
         {
             InitializeComponent();
+            _usuario = usuario;
+
+            // Según el rol
+            ConfigurarMenusPorRol();
+
+            MessageBox.Show(
+                   $"¡ 👋 Bienvenido) ! ",// Texto del mensaje
+                   "Biemvenido",// Titulo del mensaje
+                   MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                   MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
+             );
+
+
         }
         //Este evento es para cerrar el formulario de la vista principal y esta relacionada al menu salir 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,6 +52,27 @@ namespace ProyectoTOO.Views
         {
             FormularioAreaTematica formularioAreaTematica = new FormularioAreaTematica();
             formularioAreaTematica.ShowDialog();
+        }
+
+        private void ConfigurarMenusPorRol()
+        {
+            if (_usuario.Rol == "Director")
+            {
+                // Director ve todo
+                agregarAreaTematicaToolStripMenuItem.Visible = true;
+                reportesToolStripMenuItem.Visible = true;
+            }
+            else if (_usuario.Rol == "Investigador")
+            {
+                // Usuario normal: ocultar cosas administrativas
+                agregarAreaTematicaToolStripMenuItem.Visible = false;
+                reportesToolStripMenuItem.Visible = false;
+            }
+        }
+
+        private void vistaPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

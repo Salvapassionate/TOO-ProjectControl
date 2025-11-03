@@ -36,6 +36,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
@@ -103,9 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Proyecto.cs" />
+    <Compile Include="Model\AdministradorModel.cs" />
     <Compile Include="Model\AreaTematicaModel.cs" />
     <Compile Include="Model\ConexionBD.cs" />
+    <Compile Include="Model\DirectorModel.cs" />
     <Compile Include="Model\InstitucionModel.cs" />
+    <Compile Include="Model\InvestigadorModel.cs" />
     <Compile Include="Model\ProyectoModel.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Program.cs" />

@@ -11,9 +11,7 @@ namespace ProyectoTOO.Controller
 {
     public class Usuario
     {
-        private int idUsuario;
-        private string nombres;
-        private string apellidos;
+        private string idUsuario;
         private string correo;
         private string usuario;
         private string contraseña;
@@ -25,9 +23,7 @@ namespace ProyectoTOO.Controller
 
         public Usuario() { }
 
-        public int IdUsuario { get { return idUsuario; } set { idUsuario = value; } }
-        public string Nombre{ get { return nombres;} set{ nombres = value;}}
-        public string Apellido { get {  return apellidos; } set {  apellidos = value; } }
+        public string IdUsuario { get { return idUsuario; } set { idUsuario = value; } }
         public string Correo { get { return correo; } set { correo = value; } }
         public string User { get { return usuario; } set { usuario = value; } }
         public string Pass { get { return contraseña; } set { contraseña = value; } }
@@ -38,39 +34,151 @@ namespace ProyectoTOO.Controller
         public DateTime UltimaFecha { get { return ultimaFechaDeIngreso; } set { ultimaFechaDeIngreso = value; } }
         public DateTime FechaRegistro { get { return fechaRegistro; } set { fechaRegistro = value; } }
 
+
+        /// <summary>
+        /// Esta funcion se utiliza para autenticar a los usuarios
+        /// </summary>
+        /// <param name="correo"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+
+        public Usuario Login(string correo, string password)
+        {
+            UsuarioModel model = new UsuarioModel();
+            return model.Autenticar(correo, password);
+        }
+
+        /// <summary>
+        /// Esta funcion se utiliza para registrar a los usuarios
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
+        public bool RegistrarUsuario(Usuario usuario)
+        {
+            UsuarioModel model = new UsuarioModel();
+            return model.Registrar(usuario);
+        }
+
+        //Esta funcion se utiliza para autenticar a los usuarios
+        public bool CambiarPassword(int idUsuario, string nuevaPass)
+        {
+            UsuarioModel model = new UsuarioModel();
+            return model.CambiarPassword(idUsuario, nuevaPass);
+        }
+
+        /// <summary>
+        /// Esta funcion se utiliza para realizar una busqueda de los usuarios por correo
+        /// </summary>
+        /// <param name="correo"></param>
+        /// <returns></returns>
+        public Usuario BuscarUsuarioPorCorreo(string correo)
+        {
+            UsuarioModel model = new UsuarioModel();
+            return model.BuscarPorCorreo(correo);
+        }
+
     }
 
-    public class InstitucionEducativa:Usuario
+    public class InstitucionEducativa
     {
         private int idInstitucion;
         private string nombreInstitucion;
+        private string correoInstitucion;
+        private string direccion;
+        private string descripción;
 
         public InstitucionEducativa() { }
         public int IdInstitucion { get { return idInstitucion; } set { idInstitucion = value; } }
         public string NombreInstitucion { get { return nombreInstitucion; } set { nombreInstitucion = value; } }
+        public string CorreoInstitucion { get { return correoInstitucion; } set { correoInstitucion = value; } }
+        public string Direccion { get { return direccion; } set { direccion = value; } }
+        public string Descripcion { get { return descripción; } set { descripción = value; } }
+
+        public List<InstitucionEducativa> listaInstituciones()
+        {
+            List<InstitucionEducativa> lista;
+            InstitucionModel inst = new InstitucionModel();
+            lista = inst.listaInstitusiones();
+
+            return lista;
+        }
 
 
     }
 
-    public class DirectorProyecto: Usuario
+    public class Administrador
+    {
+        private int idAdmin;
+        private string nombres;
+        private string apellidos;
+        private string institucion;
+        private string idUsuario;
+        public Administrador() { }
+
+        public int IdDirectorProyecto { get { return idAdmin; } set { idAdmin = value; } }
+        public string IdUser { get { return idUsuario; } set { idUsuario = value; } }
+
+        public string Institucion { get { return institucion; } set { institucion = value; } }
+        public string Nombre { get { return nombres; } set { nombres = value; } }
+        public string Apellido { get { return apellidos; } set { apellidos = value; } }
+
+        public bool registroAdministrador(Administrador admin)
+        {
+            AdministradorModel administradorModel = new AdministradorModel();
+
+            return administradorModel.Registrar(admin);
+
+        }
+
+    }
+
+    public class DirectorProyecto
     {
         private int idDirectorProyecto;
-        private int idInstitucion;
+        private string nombres;
+        private string apellidos;
+        private string institucion;
+        private string idUsuario;
         public DirectorProyecto() { }
 
         public int IdDirectorProyecto { get { return idDirectorProyecto; } set { idDirectorProyecto = value; } }
-        public int IdInstitucion { get { return idInstitucion; }set { idInstitucion = value; }}
+        public string IdUser { get { return idUsuario; }set { idUsuario = value; }}
+        public string Institucion { get { return institucion; } set { institucion = value; } }
+        public string Nombre { get { return nombres; } set { nombres = value; } }
+        public string Apellido { get { return apellidos; } set { apellidos = value; } }
+
+        public bool registroDirector(DirectorProyecto director)
+        {
+            DirectorModel directorModel = new DirectorModel();
+
+            return directorModel.Registrar(director);
+
+        }
 
     }
 
-    public class Investigador:Usuario
+    public class Investigador
     {
         private int idInvestigador;
-        private int idInstitucion;
+        private string nombres;
+        private string apellidos;
+        private string institucion;
+        private string idUsuario;
         public Investigador() { }
 
         public int IdInvestigador { get { return idInvestigador; } set { idInvestigador = value; } }
-        public int IdInstitucion { get { return idInstitucion; } set { idInstitucion = value; } }
+        public string IdUser { get { return idUsuario; } set { idUsuario = value; } }
+        public string Institucion { get { return institucion; } set { institucion = value; } }
+        public string Nombre { get { return nombres; } set { nombres = value; } }
+        public string Apellido { get { return apellidos; } set { apellidos = value; } }
+
+        public bool registroInvestigador(Investigador investigador)
+        {
+            InvestigadorModel invest = new InvestigadorModel();
+
+            return invest.Registrar(investigador);
+
+        }
 
     }
 
@@ -81,6 +189,12 @@ namespace ProyectoTOO.Controller
         private string telefono1;
         private string telefono2;
         private string telefono3;
+        private int idInstitucion;
+        private int idAdmin;
+        private int idDirectorProyecto;
+        private int idInvestigador;
+
+
 
         public Telefono() { }
 
@@ -91,6 +205,11 @@ namespace ProyectoTOO.Controller
         public string Telefono2{get { return telefono2; }set { telefono2 = value; }}
 
         public string Telefono3{get { return telefono3; }set { telefono3 = value; }}
+        public int IdInstitucion { get { return idInstitucion; } set { idInstitucion = value; } }
+        public int IdAdmin { get { return idAdmin; } set { idAdmin = value; } }
+        public int IdDirectorProyecto { get { return idDirectorProyecto; } set { idDirectorProyecto = value; } }
+        public int IdInvestigador { get { return idInvestigador; } set { idInvestigador = value; } }
+
     }
 
     public class AreaTematica
@@ -204,24 +323,6 @@ namespace ProyectoTOO.Controller
         public int IdAreaTematica {get { return idareaTematica; }set { idareaTematica = value; }}
 
         public int IdDirectorProyecto{get { return idDirectorproyecto; }set { idDirectorproyecto = value; }}
-    }
-
-    public class UsuarioController
-    {
-        private UsuarioModel model = new UsuarioModel();
-
-        public Usuario Login(string correo, string password)
-        {
-            return model.Autenticar(correo, password);
-        }
-        public bool RegistrarUsuario(Usuario usuario)
-        {
-            return model.Registrar(usuario);
-        }
-        public bool CambiarPassword(int idUsuario, string nuevaPass)
-        {
-            return model.CambiarPassword(idUsuario, nuevaPass);
-        }
     }
 
 
