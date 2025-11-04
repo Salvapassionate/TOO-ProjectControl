@@ -31,25 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioProyecto));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dTFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.dTFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbxAreasTematicas = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnRegistrarProyecto = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtNombreProyecto = new System.Windows.Forms.TextBox();
+            this.btnRegistrarProyecto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrarProyecto)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,56 +54,55 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(682, 753);
+            this.panel1.Size = new System.Drawing.Size(628, 744);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.btnRegistrarProyecto);
+            this.groupBox1.Controls.Add(this.dTFechaFin);
+            this.groupBox1.Controls.Add(this.dTFechaInicio);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbxAreasTematicas);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.btnRegistrarProyecto);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtUser);
+            this.groupBox1.Controls.Add(this.txtNombreProyecto);
             this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox1.Location = new System.Drawing.Point(38, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(618, 717);
+            this.groupBox1.Size = new System.Drawing.Size(554, 699);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
-            // dateTimePicker2
+            // dTFechaFin
             // 
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
-            this.dateTimePicker2.Location = new System.Drawing.Point(336, 134);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker2.TabIndex = 18;
+            this.dTFechaFin.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.dTFechaFin.Location = new System.Drawing.Point(221, 182);
+            this.dTFechaFin.Name = "dTFechaFin";
+            this.dTFechaFin.Size = new System.Drawing.Size(299, 27);
+            this.dTFechaFin.TabIndex = 18;
             // 
-            // dateTimePicker1
+            // dTFechaInicio
             // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
-            this.dateTimePicker1.Location = new System.Drawing.Point(34, 130);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dTFechaInicio.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.dTFechaInicio.Location = new System.Drawing.Point(221, 135);
+            this.dTFechaInicio.Name = "dTFechaInicio";
+            this.dTFechaInicio.Size = new System.Drawing.Size(299, 27);
+            this.dTFechaInicio.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(305, 285);
+            this.label6.Location = new System.Drawing.Point(30, 326);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 24);
             this.label6.TabIndex = 16;
@@ -116,11 +110,12 @@
             // 
             // cmbxAreasTematicas
             // 
-            this.cmbxAreasTematicas.BackColor = System.Drawing.Color.Silver;
+            this.cmbxAreasTematicas.BackColor = System.Drawing.Color.White;
+            this.cmbxAreasTematicas.ForeColor = System.Drawing.Color.Black;
             this.cmbxAreasTematicas.FormattingEnabled = true;
-            this.cmbxAreasTematicas.Location = new System.Drawing.Point(308, 321);
+            this.cmbxAreasTematicas.Location = new System.Drawing.Point(34, 364);
             this.cmbxAreasTematicas.Name = "cmbxAreasTematicas";
-            this.cmbxAreasTematicas.Size = new System.Drawing.Size(278, 30);
+            this.cmbxAreasTematicas.Size = new System.Drawing.Size(486, 30);
             this.cmbxAreasTematicas.TabIndex = 15;
             // 
             // label5
@@ -134,73 +129,25 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "FORMULARIO PARA EL REGISTRO DE NUEVOS PROYECTOS";
             // 
-            // btnRegistrarProyecto
+            // txtDescripcion
             // 
-            this.btnRegistrarProyecto.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarProyecto.Image")));
-            this.btnRegistrarProyecto.Location = new System.Drawing.Point(492, 628);
-            this.btnRegistrarProyecto.Name = "btnRegistrarProyecto";
-            this.btnRegistrarProyecto.Size = new System.Drawing.Size(94, 73);
-            this.btnRegistrarProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnRegistrarProyecto.TabIndex = 13;
-            this.btnRegistrarProyecto.TabStop = false;
-            this.btnRegistrarProyecto.Click += new System.EventHandler(this.btnRegistrarProyecto_Click);
-            this.btnRegistrarProyecto.MouseEnter += new System.EventHandler(this.btnRegistrarProyecto_MouseEnter);
-            this.btnRegistrarProyecto.MouseLeave += new System.EventHandler(this.btnRegistrarProyecto_MouseLeave);
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.Silver;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(34, 507);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox3.Size = new System.Drawing.Size(552, 106);
-            this.textBox3.TabIndex = 12;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(34, 285);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(235, 126);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ESTADO";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(18, 83);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(156, 28);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "EN PROGRESO";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(18, 38);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(104, 28);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "INICIADO";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtDescripcion.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.Black;
+            this.txtDescripcion.Location = new System.Drawing.Point(34, 463);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtDescripcion.Size = new System.Drawing.Size(486, 106);
+            this.txtDescripcion.TabIndex = 12;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(332, 86);
+            this.label4.Location = new System.Drawing.Point(34, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 24);
             this.label4.TabIndex = 10;
@@ -211,7 +158,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(30, 86);
+            this.label3.Location = new System.Drawing.Point(34, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 24);
             this.label3.TabIndex = 7;
@@ -222,7 +169,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(30, 468);
+            this.label2.Location = new System.Drawing.Point(30, 424);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 24);
             this.label2.TabIndex = 6;
@@ -233,29 +180,45 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(30, 195);
+            this.label1.Location = new System.Drawing.Point(30, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "NOMBRE DEL PROYECTO";
             // 
-            // txtUser
+            // txtNombreProyecto
             // 
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
-            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUser.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUser.ForeColor = System.Drawing.Color.LightGray;
-            this.txtUser.Location = new System.Drawing.Point(34, 231);
-            this.txtUser.Multiline = true;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(552, 30);
-            this.txtUser.TabIndex = 5;
+            this.txtNombreProyecto.BackColor = System.Drawing.Color.White;
+            this.txtNombreProyecto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreProyecto.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreProyecto.ForeColor = System.Drawing.Color.Black;
+            this.txtNombreProyecto.Location = new System.Drawing.Point(34, 274);
+            this.txtNombreProyecto.Multiline = true;
+            this.txtNombreProyecto.Name = "txtNombreProyecto";
+            this.txtNombreProyecto.Size = new System.Drawing.Size(486, 30);
+            this.txtNombreProyecto.TabIndex = 5;
+            // 
+            // btnRegistrarProyecto
+            // 
+            this.btnRegistrarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(214)))), ((int)(((byte)(194)))));
+            this.btnRegistrarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarProyecto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnRegistrarProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarProyecto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarProyecto.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarProyecto.Location = new System.Drawing.Point(326, 605);
+            this.btnRegistrarProyecto.Name = "btnRegistrarProyecto";
+            this.btnRegistrarProyecto.Size = new System.Drawing.Size(194, 50);
+            this.btnRegistrarProyecto.TabIndex = 29;
+            this.btnRegistrarProyecto.Text = "Registrar";
+            this.btnRegistrarProyecto.UseVisualStyleBackColor = false;
+            this.btnRegistrarProyecto.Click += new System.EventHandler(this.btnRegistrarProyecto_Click);
             // 
             // FormularioProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 753);
+            this.ClientSize = new System.Drawing.Size(628, 744);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -265,9 +228,6 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegistrarProyecto)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -276,20 +236,17 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtNombreProyecto;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.PictureBox btnRegistrarProyecto;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbxAreasTematicas;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dTFechaFin;
+        private System.Windows.Forms.DateTimePicker dTFechaInicio;
+        private System.Windows.Forms.Button btnRegistrarProyecto;
     }
 }

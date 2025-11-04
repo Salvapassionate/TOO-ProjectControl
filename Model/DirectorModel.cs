@@ -64,5 +64,67 @@ namespace ProyectoTOO.Model
 
             return resultado;
         }
+
+        public DirectorProyecto buscarDirectorActivo()
+        {
+
+            DirectorProyecto director = null;
+
+            try
+            {
+
+               
+
+                string query = "SELECT * FROM directorproyecto WHERE idDirectorProyecto = @idDirectorProyecto";
+
+                MySqlConnection conn = conexion.ObtenerConexion();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idDirectorProyecto", "");
+
+                conexion.AbrirConexion();
+                var reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    director = new DirectorProyecto
+                    {
+                        IdDirectorProyecto = reader.GetInt32("idDirectorProyecto"),
+                        Nombre = reader.GetString("nombres"),
+                        Apellido = reader.GetString("apellidos"),
+                        Institucion = reader.GetString("institucion"),
+                        IdUser = reader.GetString("idUsuario"),
+
+                    };
+                }
+
+                reader.Close();
+                conexion.CerrarConexion();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "¡No se encontro el director !", // Texto del mensaje
+                    "Advertencia",// Titulo del mensaje
+                    MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                    MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
+                );
+            }
+
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+
+
+
+            return director;
+
+        }
+
+
+
+
+
     }
 }

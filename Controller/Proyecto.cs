@@ -155,6 +155,13 @@ namespace ProyectoTOO.Controller
 
         }
 
+        //public DirectorProyecto buscarDirector(Director director)
+        //{
+            
+
+        //    return director;
+        //}
+
     }
 
     public class Investigador
@@ -323,6 +330,24 @@ namespace ProyectoTOO.Controller
         public int IdAreaTematica {get { return idareaTematica; }set { idareaTematica = value; }}
 
         public int IdDirectorProyecto{get { return idDirectorproyecto; }set { idDirectorproyecto = value; }}
+
+
+        public void registrarProyecto(Proyecto proyecto)
+        {
+            ProyectoModel proyectoModel = new ProyectoModel();
+            proyectoModel.insertarProyecto(proyecto);
+
+        }
+
+
+        public List<Proyecto> ListarProyecto()
+        {
+            ProyectoModel proyectoModel = new ProyectoModel();
+            return proyectoModel.listaProyectos();
+
+        }
+
+
     }
 
 

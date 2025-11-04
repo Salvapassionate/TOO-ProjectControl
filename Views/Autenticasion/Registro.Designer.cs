@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbxInstitucion = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbxRol = new System.Windows.Forms.ComboBox();
@@ -47,8 +49,6 @@
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbxInstitucion = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1155, 678);
             this.panel1.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(31, 428);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 24);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "INSTITUCION";
+            // 
+            // cmbxInstitucion
+            // 
+            this.cmbxInstitucion.BackColor = System.Drawing.Color.White;
+            this.cmbxInstitucion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbxInstitucion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbxInstitucion.ForeColor = System.Drawing.Color.Black;
+            this.cmbxInstitucion.FormattingEnabled = true;
+            this.cmbxInstitucion.Location = new System.Drawing.Point(34, 464);
+            this.cmbxInstitucion.Name = "cmbxInstitucion";
+            this.cmbxInstitucion.Size = new System.Drawing.Size(278, 31);
+            this.cmbxInstitucion.TabIndex = 29;
             // 
             // btnRegistrar
             // 
@@ -104,10 +127,10 @@
             // 
             // cmbxRol
             // 
-            this.cmbxRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.cmbxRol.BackColor = System.Drawing.Color.White;
             this.cmbxRol.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbxRol.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbxRol.ForeColor = System.Drawing.Color.White;
+            this.cmbxRol.ForeColor = System.Drawing.Color.Black;
             this.cmbxRol.FormattingEnabled = true;
             this.cmbxRol.Items.AddRange(new object[] {
             "Administrador",
@@ -137,10 +160,10 @@
             // 
             // txtRepetirContraseña
             // 
-            this.txtRepetirContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtRepetirContraseña.BackColor = System.Drawing.Color.White;
             this.txtRepetirContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRepetirContraseña.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRepetirContraseña.ForeColor = System.Drawing.Color.LightGray;
+            this.txtRepetirContraseña.ForeColor = System.Drawing.Color.Black;
             this.txtRepetirContraseña.Location = new System.Drawing.Point(38, 286);
             this.txtRepetirContraseña.Multiline = true;
             this.txtRepetirContraseña.Name = "txtRepetirContraseña";
@@ -161,10 +184,10 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtUsuario.BackColor = System.Drawing.Color.White;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.ForeColor = System.Drawing.Color.LightGray;
+            this.txtUsuario.ForeColor = System.Drawing.Color.Black;
             this.txtUsuario.Location = new System.Drawing.Point(38, 108);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
@@ -173,10 +196,10 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtContraseña.BackColor = System.Drawing.Color.White;
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContraseña.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.ForeColor = System.Drawing.Color.LightGray;
+            this.txtContraseña.ForeColor = System.Drawing.Color.Black;
             this.txtContraseña.Location = new System.Drawing.Point(38, 200);
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
@@ -208,10 +231,10 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtCorreo.BackColor = System.Drawing.Color.White;
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCorreo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.ForeColor = System.Drawing.Color.LightGray;
+            this.txtCorreo.ForeColor = System.Drawing.Color.Black;
             this.txtCorreo.Location = new System.Drawing.Point(34, 295);
             this.txtCorreo.Multiline = true;
             this.txtCorreo.Name = "txtCorreo";
@@ -231,10 +254,10 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtApellidos.BackColor = System.Drawing.Color.White;
             this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtApellidos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidos.ForeColor = System.Drawing.Color.LightGray;
+            this.txtApellidos.ForeColor = System.Drawing.Color.Black;
             this.txtApellidos.Location = new System.Drawing.Point(34, 210);
             this.txtApellidos.Multiline = true;
             this.txtApellidos.Name = "txtApellidos";
@@ -254,10 +277,10 @@
             // 
             // txtNombres
             // 
-            this.txtNombres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtNombres.BackColor = System.Drawing.Color.White;
             this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombres.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombres.ForeColor = System.Drawing.Color.LightGray;
+            this.txtNombres.ForeColor = System.Drawing.Color.Black;
             this.txtNombres.Location = new System.Drawing.Point(34, 110);
             this.txtNombres.Multiline = true;
             this.txtNombres.Name = "txtNombres";
@@ -285,29 +308,6 @@
             this.label3.Size = new System.Drawing.Size(95, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "NOMBRES";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(31, 428);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 24);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "INSTITUCION";
-            // 
-            // cmbxInstitucion
-            // 
-            this.cmbxInstitucion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
-            this.cmbxInstitucion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbxInstitucion.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbxInstitucion.ForeColor = System.Drawing.Color.White;
-            this.cmbxInstitucion.FormattingEnabled = true;
-            this.cmbxInstitucion.Location = new System.Drawing.Point(34, 464);
-            this.cmbxInstitucion.Name = "cmbxInstitucion";
-            this.cmbxInstitucion.Size = new System.Drawing.Size(278, 31);
-            this.cmbxInstitucion.TabIndex = 29;
             // 
             // Registro
             // 

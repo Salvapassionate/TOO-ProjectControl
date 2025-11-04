@@ -15,11 +15,14 @@ namespace ProyectoTOO.Views
     public partial class FormularioProyecto : Form
     {
         AreaTematicaModel areaTematicaModel = new AreaTematicaModel();
+        List<AreaTematica> listaAreas;
+
+
         public FormularioProyecto()
         {
             InitializeComponent();
 
-            List<AreaTematica> listaAreas = areaTematicaModel.listaAreaTematica();//Esta llista trae todas las areas tematicas disponibles
+            listaAreas = areaTematicaModel.listaAreaTematica();//Esta llista trae todas las areas tematicas disponibles
 
             if (listaAreas.Count > 0)
             {
@@ -60,19 +63,37 @@ namespace ProyectoTOO.Views
             }
         }
 
-        private void btnRegistrarProyecto_MouseEnter(object sender, EventArgs e)
-        {
-            btnRegistrarProyecto.BackColor = Color.FromArgb(186, 225, 211);
-        }
-
-        private void btnRegistrarProyecto_MouseLeave(object sender, EventArgs e)
-        {
-            btnRegistrarProyecto.BackColor = Color.FromArgb(54, 73, 96);
-        }
-
         private void btnRegistrarProyecto_Click(object sender, EventArgs e)
         {
+            //Variables
+            AreaTematica areaTematica = new AreaTematica();
+            Proyecto proyecto;
+            DirectorProyecto director = new DirectorProyecto();
+
+            listaAreas = areaTematicaModel.listaAreaTematica();//Esta llista trae todas las areas tematicas disponibles
+
+            //areaTematica = listaAreas.FirstOrDefault(a => a.Nombre.Equals(nombreBuscado, StringComparison.OrdinalIgnoreCase));
+
+            proyecto = new Proyecto
+            {
+                FechaInicio = dTFechaInicio.Value,
+                FechaFin = dTFechaInicio.Value,
+                NombreProyecto = txtNombreProyecto.Text,
+                Descripcion = txtDescripcion.Text,
+                IdAreaTematica = areaTematica.IdAreaTematica
+
+            };
 
         }
+
+
+        private void limpiarTextBox()
+        {
+            txtNombreProyecto.Text = "";
+            txtDescripcion.Text = "";
+
+        }
+
+
     }
 }

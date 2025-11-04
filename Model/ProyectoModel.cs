@@ -70,7 +70,7 @@ namespace ProyectoTOO.Model
 
 
 
-        public List<Proyecto> listaAreaTematica()
+        public List<Proyecto> listaProyectos()
         {
             List<Proyecto> listaAreasTematicas = new List<Proyecto>();
 
