@@ -1,5 +1,6 @@
 ﻿using ProyectoTOO.Controller;
 using ProyectoTOO.Model;
+using ProyectoTOO.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace ProyectoTOO.Views
     {
         AreaTematicaModel areaTematicaModel = new AreaTematicaModel();
         List<AreaTematica> listaAreas;
+        List<DirectorProyecto> listaDirectores;
 
 
         public FormularioProyecto()
@@ -65,32 +67,95 @@ namespace ProyectoTOO.Views
 
         private void btnRegistrarProyecto_Click(object sender, EventArgs e)
         {
-            //Variables
-            AreaTematica areaTematica = new AreaTematica();
-            Proyecto proyecto;
-            DirectorProyecto director = new DirectorProyecto();
-
-            listaAreas = areaTematicaModel.listaAreaTematica();//Esta llista trae todas las areas tematicas disponibles
-
-            //areaTematica = listaAreas.FirstOrDefault(a => a.Nombre.Equals(nombreBuscado, StringComparison.OrdinalIgnoreCase));
-
-            proyecto = new Proyecto
+            try
             {
-                FechaInicio = dTFechaInicio.Value,
-                FechaFin = dTFechaInicio.Value,
-                NombreProyecto = txtNombreProyecto.Text,
-                Descripcion = txtDescripcion.Text,
-                IdAreaTematica = areaTematica.IdAreaTematica
+                //Variables
+                AreaTematica areaTematica = new AreaTematica();
+                AreaTematica areaTemp;
+                Proyecto proyecto;
+                DirectorProyecto director = new DirectorProyecto();
+                DirectorProyecto directorTemp;
 
-            };
+                listaAreas = areaTematica.listarAreasTematicas();//Esta llista trae todas las areas tematicas disponibles
+                listaDirectores = director.listarDirectores();
+
+                if (listaAreas.Count == 0 || listaDirectores.Count == 0)
+                {
+                    MessageBox.Show(
+                     "No se pueden registrar proyectos sin áreas temáticas o directores disponibles.",
+                     "Error de registro",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Warning
+                    );
+
+                    LimpiarTextBox();
+
+                    return;
+
+                }
+
+                areaTemp = listaAreas.FirstOrDefault(a => a.NombreArea == cmbxAreasTematicas.SelectedItem.ToString());
+                directorTemp = listaDirectores.FirstOrDefault(d => d.IdUser == vistaPrincipal._usuarioLogueado.IdUsuario);
+
+
+                //areaTematica = listaAreas.FirstOrDefault(a => a.Nombre.Equals(nombreBuscado, StringComparison.OrdinalIgnoreCase));
+
+                proyecto = new Proyecto
+                {
+                    FechaInicio = dTFechaInicio.Value,
+                    FechaFin = dTFechaInicio.Value,
+                    Estado = "En progreso", //Estado inicial del proyecto, los otros estados son "Completado" y "En espera"
+                    NombreProyecto = txtNombreProyecto.Text,
+                    Descripcion = txtDescripcion.Text,
+                    IdAreaTematica = areaTemp.IdAreaTematica,
+                    IdDirectorProyecto = directorTemp.IdDirectorProyecto
+
+                };
+
+                if (proyecto != null)
+                {
+                    proyecto.registrarProyecto(proyecto);
+
+                    MessageBox.Show(
+                          "¡ El proyecto se registro exitosamente ! ",// Texto del mensaje
+                          "Registro Exitoso",// Titulo del mensaje
+                          MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                          MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No fue posible registrar el proyecto",
+                        "Error de registro de proyecto",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "No se pudo registrar el proyecto",
+                    "Error en el registro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+            }
+
+            
+
+
 
         }
 
 
-        private void limpiarTextBox()
+        public void LimpiarTextBox()
         {
-            txtNombreProyecto.Text = "";
-            txtDescripcion.Text = "";
+            txtNombreProyecto.Clear();
+            txtDescripcion.Clear();
 
         }
 

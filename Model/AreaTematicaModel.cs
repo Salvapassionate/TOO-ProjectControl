@@ -95,7 +95,7 @@ namespace ProyectoTOO.Model
             catch (Exception e)
             {
                 MessageBox.Show(
-                    "No se pudo obtener la lista de áreas temáticas.\n\nDetalles: ",
+                    "No se pudo obtener la lista de áreas temáticas",
                     "Error de consulta",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error

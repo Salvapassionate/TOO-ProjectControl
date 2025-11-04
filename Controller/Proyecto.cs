@@ -147,6 +147,11 @@ namespace ProyectoTOO.Controller
         public string Nombre { get { return nombres; } set { nombres = value; } }
         public string Apellido { get { return apellidos; } set { apellidos = value; } }
 
+        /// <summary>
+        /// Este metodo registra un director de proyecto en la base de datos
+        /// </summary>
+        /// <param name="director"></param>
+        /// <returns></returns>
         public bool registroDirector(DirectorProyecto director)
         {
             DirectorModel directorModel = new DirectorModel();
@@ -155,12 +160,18 @@ namespace ProyectoTOO.Controller
 
         }
 
-        //public DirectorProyecto buscarDirector(Director director)
-        //{
-            
+        /// <summary>
+        /// Este metodo devuelve la lsita de todos los directores de proyecto registrados en la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public List<DirectorProyecto> listarDirectores()
+        {
+            List<DirectorProyecto> director;
+            DirectorModel directorModel = new DirectorModel();
 
-        //    return director;
-        //}
+
+            return director=directorModel.listaDirectoresProyecto();
+        }
 
     }
 
@@ -275,6 +286,11 @@ namespace ProyectoTOO.Controller
             return hayElemtosEnlaLista;
         }
 
+        public List<AreaTematica> listarAreasTematicas()
+        {
+            AreaTematicaModel areaModel = new AreaTematicaModel();
+            return areaModel.listaAreaTematica();
+        }
 
 
 

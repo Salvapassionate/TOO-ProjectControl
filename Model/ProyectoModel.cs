@@ -29,7 +29,7 @@ namespace ProyectoTOO.Model
             try
             {
 
-                string query = "INSERT INTO proyecto (nombreProyecto, descripcionProyecto, fechaInicio, fechaFin, estado, idAreaTematica, idDirectorProyecto) VALUES (@nombreProyecto, @descripcionProyecto, @fechaInicio, @fechaFin, @estado, @idAreaTematica, @idDirectorProyecto";
+                string query = "INSERT INTO proyecto (nombreProyecto, descripcionProyecto, fechaInicio, fechaFin, estado, idAreaTematica, idDirectorProyecto) VALUES (@nombreProyecto, @descripcionProyecto, @fechaInicio, @fechaFin, @estado, @idAreaTematica, @idDirectorProyecto)";
                 
                 MySqlCommand cmd = new MySqlCommand(query, conexion.ObtenerConexion());
                 cmd.Parameters.AddWithValue("@nombreProyecto", proyecto.NombreProyecto);
@@ -43,13 +43,6 @@ namespace ProyectoTOO.Model
                 conexion.AbrirConexion();
                 cmd.ExecuteNonQuery();
                 conexion.CerrarConexion();
-
-                MessageBox.Show(
-                      "¡ El proyecto se registro exitosamente ! ",// Texto del mensaje
-                      "Registro Exitoso",// Titulo del mensaje
-                      MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
-                      MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
-                );
 
             }
             catch (Exception)

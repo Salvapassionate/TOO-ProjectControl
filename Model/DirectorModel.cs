@@ -65,61 +65,50 @@ namespace ProyectoTOO.Model
             return resultado;
         }
 
-        public DirectorProyecto buscarDirectorActivo()
+        public List<DirectorProyecto> listaDirectoresProyecto()
         {
-
-            DirectorProyecto director = null;
+            List<DirectorProyecto> listaDirectores = new List<DirectorProyecto>();
 
             try
             {
-
-               
-
-                string query = "SELECT * FROM directorproyecto WHERE idDirectorProyecto = @idDirectorProyecto";
-
-                MySqlConnection conn = conexion.ObtenerConexion();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@idDirectorProyecto", "");
+                string query = "SELECT idDirectorProyecto, nombres, apellidos, institucion, idUsuario FROM directorproyecto";
+                MySqlCommand cmd = new MySqlCommand(query, conexion.ObtenerConexion());
 
                 conexion.AbrirConexion();
-                var reader = cmd.ExecuteReader();
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read())
+                while (reader.Read())
                 {
-                    director = new DirectorProyecto
+                    DirectorProyecto director = new DirectorProyecto()
                     {
                         IdDirectorProyecto = reader.GetInt32("idDirectorProyecto"),
                         Nombre = reader.GetString("nombres"),
                         Apellido = reader.GetString("apellidos"),
                         Institucion = reader.GetString("institucion"),
-                        IdUser = reader.GetString("idUsuario"),
-
+                        IdUser = reader.GetString("idUsuario")
                     };
+
+                    listaDirectores.Add(director);
                 }
 
                 reader.Close();
                 conexion.CerrarConexion();
-
             }
             catch (Exception)
             {
                 MessageBox.Show(
-                    "¡No se encontro el director !", // Texto del mensaje
-                    "Advertencia",// Titulo del mensaje
-                    MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
-                    MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
+                    "No se pudo obtener la lista de directores de la base de datos",
+                    "Error de consulta",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
                 );
             }
-
             finally
             {
                 conexion.CerrarConexion();
             }
 
-
-
-            return director;
-
+            return listaDirectores;
         }
 
 
