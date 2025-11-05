@@ -69,6 +69,7 @@ namespace ProyectoTOO.Views
         {
             try
             {
+
                 //Variables
                 AreaTematica areaTematica = new AreaTematica();
                 AreaTematica areaTemp;
@@ -88,17 +89,28 @@ namespace ProyectoTOO.Views
                      MessageBoxIcon.Warning
                     );
 
-                    LimpiarTextBox();
 
                     return;
 
                 }
 
-                areaTemp = listaAreas.FirstOrDefault(a => a.NombreArea == cmbxAreasTematicas.SelectedItem.ToString());
-                directorTemp = listaDirectores.FirstOrDefault(d => d.IdUser == vistaPrincipal._usuarioLogueado.IdUsuario);
+                areaTemp = listaAreas.Find(a => a.NombreArea == cmbxAreasTematicas.SelectedItem.ToString());
+                directorTemp = listaDirectores.Find(d => d.IdUser == vistaPrincipal._usuarioLogueado.IdUsuario);
 
 
-                //areaTematica = listaAreas.FirstOrDefault(a => a.Nombre.Equals(nombreBuscado, StringComparison.OrdinalIgnoreCase));
+                if (areaTemp == null || directorTemp == null)
+                {
+                    MessageBox.Show(
+                          "¡Advertencia debes seleccionar un area tematica de la lista! ",// Texto del mensaje
+                          "Registro Exitoso",// Titulo del mensaje
+                          MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                          MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
+                    );
+
+                    return;
+                }
+
+
 
                 proyecto = new Proyecto
                 {
@@ -112,16 +124,72 @@ namespace ProyectoTOO.Views
 
                 };
 
+
                 if (proyecto != null)
                 {
-                    proyecto.registrarProyecto(proyecto);
+                    if(dTFechaInicio.Value.Date < dTFechaFin.Value.Date)
+                    {
+                        if (!String.IsNullOrEmpty(txtNombreProyecto.Text))
+                        {
+                            if (!String.IsNullOrEmpty(txtDescripcion.Text))
+                            {
+                                proyecto.registrarProyecto(proyecto);
 
-                    MessageBox.Show(
-                          "¡ El proyecto se registro exitosamente ! ",// Texto del mensaje
-                          "Registro Exitoso",// Titulo del mensaje
-                          MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
-                          MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
-                    );
+                                MessageBox.Show(
+                                      "¡ El proyecto se registro exitosamente ! ",// Texto del mensaje
+                                      "Registro Exitoso",// Titulo del mensaje
+                                      MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                                      MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
+                                );
+
+                                LimpiarTextBox();
+                            }
+                            else
+                            {
+                                txtDescripcion.Focus();
+                                txtDescripcion.BackColor = Color.LightYellow;
+
+                                MessageBox.Show(
+                                        "¡ No se puede registrar ningun proyecto sin descripcion, por favor agregue una descripcion ! ",// Texto del mensaje
+                                        "Advertencia",// Titulo del mensaje
+                                        MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                                        MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
+                                );
+
+                            }
+
+                        }
+                        else
+                        {
+
+                            txtNombreProyecto.Focus();
+                            txtNombreProyecto.BackColor = Color.LightYellow;
+
+                            MessageBox.Show(
+                                    "¡ No se puede registrar ningun proyecto sin nombre, por favor agregue un nombre ! ",// Texto del mensaje
+                                    "Advertencia",// Titulo del mensaje
+                                    MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                                    MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
+                            );
+
+                        }
+
+                        return;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                              "¡ No se puede poner la misma fecha de inicio y fin del proyecto ! ",// Texto del mensaje
+                              "Fechas de inicio y Fin no deben ser iguales",// Titulo del mensaje
+                              MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
+                              MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
+                        );
+
+                        dTFechaFin.Focus();
+
+                    }
+
                 }
                 else
                 {
@@ -156,6 +224,8 @@ namespace ProyectoTOO.Views
         {
             txtNombreProyecto.Clear();
             txtDescripcion.Clear();
+            txtDescripcion.BackColor = Color.White;
+            txtNombreProyecto.BackColor = Color.White;
 
         }
 

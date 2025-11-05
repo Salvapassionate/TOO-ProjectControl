@@ -32,6 +32,10 @@ namespace ProyectoTOO.Views
                 AreaTematica areaTematica = new AreaTematica(txtNombreAreaTematica.Text, txtDescripcionAreaTematica.Text);
 
                 areaTematica.crearArea(areaTematica);
+
+                limpiarTextBox();
+                
+
             }
             else
             {
@@ -40,16 +44,30 @@ namespace ProyectoTOO.Views
                    "Advertencia",// Titulo del mensaje
                    MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
                    MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
-               );
+                );
+
+                if (string.IsNullOrWhiteSpace(txtNombreAreaTematica.Text))
+                {
+                    txtNombreAreaTematica.BackColor = Color.LightYellow;
+                }
+                else if (string.IsNullOrWhiteSpace(txtDescripcionAreaTematica.Text))
+                {
+                    txtDescripcionAreaTematica.BackColor = Color.LightYellow;
+
+                }
+
             }
 
-            //Limpiar los inputBox
 
+
+        }
+
+        public void limpiarTextBox()
+        {
             txtNombreAreaTematica.Clear();
             txtDescripcionAreaTematica.Clear();
-
-
-
+            txtNombreAreaTematica.BackColor = Color.White;
+            txtDescripcionAreaTematica.BackColor = Color.White;
         }
 
         //Con este evento se valida que no se ponga numeros en el cuadro de texto txtNombreAreaTematica, solo texto
@@ -64,6 +82,11 @@ namespace ProyectoTOO.Views
         private void txtDescripcionAreaTematica_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validador.SoloLetras(txtDescripcionAreaTematica.Text, e, txtDescripcionAreaTematica);
+        }
+
+        private void FormularioAreaTematica_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

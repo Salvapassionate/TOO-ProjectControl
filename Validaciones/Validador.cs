@@ -45,12 +45,6 @@ namespace ProyectoTOO.Validaciones
                     MessageBoxIcon.Warning    // Tipo de icono Information, Warning, Error, Question
                 );
             }
-            else
-            {
-                // Restaurar color normal si el valor es válido
-                cajaTexto.BackColor = Color.FromArgb(54, 73, 96);
-                cajaTexto.ForeColor = Color.White;
-            }
 
         }
 

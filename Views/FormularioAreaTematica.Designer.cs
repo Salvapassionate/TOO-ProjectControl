@@ -72,10 +72,10 @@
             // 
             // txtDescripcionAreaTematica
             // 
-            this.txtDescripcionAreaTematica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtDescripcionAreaTematica.BackColor = System.Drawing.Color.White;
             this.txtDescripcionAreaTematica.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripcionAreaTematica.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcionAreaTematica.ForeColor = System.Drawing.Color.White;
+            this.txtDescripcionAreaTematica.ForeColor = System.Drawing.Color.Black;
             this.txtDescripcionAreaTematica.Location = new System.Drawing.Point(23, 262);
             this.txtDescripcionAreaTematica.Multiline = true;
             this.txtDescripcionAreaTematica.Name = "txtDescripcionAreaTematica";
@@ -118,10 +118,10 @@
             // 
             // txtNombreAreaTematica
             // 
-            this.txtNombreAreaTematica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
+            this.txtNombreAreaTematica.BackColor = System.Drawing.Color.White;
             this.txtNombreAreaTematica.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreAreaTematica.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreAreaTematica.ForeColor = System.Drawing.Color.White;
+            this.txtNombreAreaTematica.ForeColor = System.Drawing.Color.Black;
             this.txtNombreAreaTematica.Location = new System.Drawing.Point(23, 150);
             this.txtNombreAreaTematica.Multiline = true;
             this.txtNombreAreaTematica.Name = "txtNombreAreaTematica";
@@ -140,6 +140,7 @@
             this.Name = "FormularioAreaTematica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioAreaTematica";
+            this.Load += new System.EventHandler(this.FormularioAreaTematica_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

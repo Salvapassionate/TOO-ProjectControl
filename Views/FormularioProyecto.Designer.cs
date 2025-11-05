@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioProyecto));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRegistrarProyecto = new System.Windows.Forms.Button();
             this.dTFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dTFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreProyecto = new System.Windows.Forms.TextBox();
-            this.btnRegistrarProyecto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(628, 744);
+            this.panel1.Size = new System.Drawing.Size(641, 744);
             this.panel1.TabIndex = 0;
             // 
             // groupBox1
@@ -77,9 +77,25 @@
             this.groupBox1.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox1.Location = new System.Drawing.Point(38, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(554, 699);
+            this.groupBox1.Size = new System.Drawing.Size(572, 699);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // btnRegistrarProyecto
+            // 
+            this.btnRegistrarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(214)))), ((int)(((byte)(194)))));
+            this.btnRegistrarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrarProyecto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnRegistrarProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarProyecto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarProyecto.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarProyecto.Location = new System.Drawing.Point(326, 605);
+            this.btnRegistrarProyecto.Name = "btnRegistrarProyecto";
+            this.btnRegistrarProyecto.Size = new System.Drawing.Size(194, 50);
+            this.btnRegistrarProyecto.TabIndex = 29;
+            this.btnRegistrarProyecto.Text = "Registrar";
+            this.btnRegistrarProyecto.UseVisualStyleBackColor = false;
+            this.btnRegistrarProyecto.Click += new System.EventHandler(this.btnRegistrarProyecto_Click);
             // 
             // dTFechaFin
             // 
@@ -198,27 +214,11 @@
             this.txtNombreProyecto.Size = new System.Drawing.Size(486, 30);
             this.txtNombreProyecto.TabIndex = 5;
             // 
-            // btnRegistrarProyecto
-            // 
-            this.btnRegistrarProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(214)))), ((int)(((byte)(194)))));
-            this.btnRegistrarProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrarProyecto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnRegistrarProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarProyecto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarProyecto.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarProyecto.Location = new System.Drawing.Point(326, 605);
-            this.btnRegistrarProyecto.Name = "btnRegistrarProyecto";
-            this.btnRegistrarProyecto.Size = new System.Drawing.Size(194, 50);
-            this.btnRegistrarProyecto.TabIndex = 29;
-            this.btnRegistrarProyecto.Text = "Registrar";
-            this.btnRegistrarProyecto.UseVisualStyleBackColor = false;
-            this.btnRegistrarProyecto.Click += new System.EventHandler(this.btnRegistrarProyecto_Click);
-            // 
             // FormularioProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 744);
+            this.ClientSize = new System.Drawing.Size(641, 744);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
