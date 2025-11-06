@@ -169,5 +169,103 @@ namespace ProyectoTOO.Model
 
             return proyecto; // Retorna null si no se encontró
         }
+
+
+
+        public void eliminarProyecto(int idProyecto)
+        {
+            try
+            {
+                string query = "DELETE FROM proyecto WHERE idProyecto = @idProyecto";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion.ObtenerConexion());
+                cmd.Parameters.AddWithValue("@idProyecto", idProyecto);
+
+                conexion.AbrirConexion();
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                conexion.CerrarConexion();
+
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show(
+                        "El proyecto se eliminó correctamente.",
+                        "Proyecto eliminado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No se encontró un proyecto con el ID especificado.",
+                        "Aviso",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Ocurrió un error al intentar eliminar el proyecto.\n\nDetalle: " + ex.Message,
+                    "Error al eliminar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+
+        public void actualizarEstadoProyecto(int idProyecto, string nuevoEstado)
+        {
+            try
+            {
+                string query = "UPDATE proyecto SET estado = @nuevoEstado WHERE idProyecto = @idProyecto";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion.ObtenerConexion());
+                cmd.Parameters.AddWithValue("@nuevoEstado", nuevoEstado);
+                cmd.Parameters.AddWithValue("@idProyecto", idProyecto);
+
+                conexion.AbrirConexion();
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                conexion.CerrarConexion();
+
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show(
+                        "El estado del proyecto se Finalizo correctamente.",
+                        "Proyecto actualizado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "No se encontró un proyecto con el ID especificado.",
+                        "Aviso",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Ocurrió un error al intentar actualizar el estado del proyecto.\n\nDetalle: " + ex.Message,
+                    "Error al actualizar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+
     }
 }

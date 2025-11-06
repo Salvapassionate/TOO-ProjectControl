@@ -106,6 +106,9 @@ namespace ProyectoTOO.Views
             if (_usuarioLogueado != null)
             {
 
+                
+                panelPresentacion.Controls.Clear();// Limpia el panel de presentacion porque sino salen los pryectos del usuario anterior
+                cargarProyectos(); //Luego carga los proyectos del nuevo usuario
                 this.Show();
                 this.WindowState = FormWindowState.Maximized;
                 login.Close();
@@ -145,55 +148,157 @@ namespace ProyectoTOO.Views
             List<DirectorProyecto> listaDirectores = directorProyecto.listarDirectores();
             List<AreaTematica> listAreas = areaTematica.listarAreasTematicas();
 
+            //Obtenemos el director logueado
+            directorProyecto = listaDirectores.Find(a => a.IdUser == _usuarioLogueado.IdUsuario);
+
+            //Filtramos los proyectos del director logueado
+            listaProyectos = listaProyectos.FindAll(p => p.IdDirectorProyecto == directorProyecto.IdDirectorProyecto);
+
+
             foreach (Proyecto proyecto in listaProyectos)
             {
-                
+                areaTematica = listAreas.Find(a => a.IdAreaTematica == proyecto.IdAreaTematica);
 
                 //Contenedor de los proyectos
-                Panel temp = new Panel();
-                temp.Name = proyecto.IdProyecto.ToString(); //El nombre del panel sera el nombre del proyecto
-                temp.Size = new Size(300, 300);
-                temp.Margin = new Padding(10);
-                temp.BackColor = Color.FromArgb(158, 180, 193);
-                temp.AutoScroll = true;
+                Panel contenedor = new Panel();
+                contenedor.Name = proyecto.IdProyecto.ToString(); //El nombre del panel sera el nombre del proyecto
+                contenedor.Size = new Size(400, 300);
+                contenedor.Margin = new Padding(10);
+                contenedor.BackColor = Color.FromArgb(230, 235, 240); 
+                contenedor.AutoScroll = true;
+
+                //Cabezera del contenedor
+
+                Panel panelCabecera = new Panel();
+                panelCabecera.BackColor = Color.FromArgb(0, 102, 204);
+                panelCabecera.Dock = DockStyle.Top;
+                panelCabecera.Height = 40;
+
+                Panel panelPie = new Panel();
+                panelPie.BackColor = Color.FromArgb(0, 102, 204);
+                panelPie.Dock = DockStyle.Bottom;
+                panelPie.Height = 30;
 
                 // Titulo del contenedor del proyecto
                 Label titulo = new Label();
-                titulo.Font = new Font("Segoe UI", 11);
-                titulo.ForeColor = titulo.ForeColor = Color.FromArgb(17, 75, 95);
+                titulo.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                titulo.ForeColor = titulo.ForeColor = Color.Black;
                 titulo.Text = proyecto.NombreProyecto.ToString();
-                titulo.Dock = DockStyle.Top;
+                titulo.Dock = DockStyle.Fill;
                 titulo.TextAlign = ContentAlignment.MiddleCenter;
-                temp.Controls.Add(titulo);
+                contenedor.Controls.Add(titulo);
+
+                panelCabecera.Controls.Add(titulo);
 
                 //Contenido del cuerpo
 
-                Label estado = new Label();
-                estado.Font = new Font("Segoe UI", 11);
-                titulo.ForeColor = titulo.ForeColor = Color.FromArgb(17, 75, 95);
-                estado.Text = proyecto.Estado.ToString();
-                estado.Dock = DockStyle.Fill;
-                titulo.TextAlign = ContentAlignment.MiddleLeft;
-                temp.Controls.Add(estado);
+                RichTextBox infoProyecto = new RichTextBox();
+                infoProyecto.ReadOnly = true;
+                infoProyecto.BorderStyle = BorderStyle.None;
+                infoProyecto.BackColor = Color.FromArgb(230, 235, 240); // color de fondo del panel
+                infoProyecto.Font = new Font("Segoe UI", 9);
+                infoProyecto.Size = new Size(350, 150);
+                infoProyecto.Dock = DockStyle.Fill;
 
-                //Pie del contenedor
-                directorProyecto = listaDirectores.Find(a => a.IdUser == _usuarioLogueado.IdUsuario.ToString());
-                Label director = new Label();
-                director.Font = new Font("Segoe UI", 11);
-                director.Text = "Director:" + directorProyecto.Nombre.ToString() +" "+ directorProyecto.Apellido;
-                director.Dock = DockStyle.Bottom;
-                director.TextAlign = ContentAlignment.MiddleCenter;
-                temp.Controls.Add(director);
+                infoProyecto.Text =
+                $"📅 Fecha de inicio: {proyecto.FechaInicio.ToString("yy/MM/dd")}\n" +
+                $"🏁 Fecha de finalización: {proyecto.FechaFin.ToString("yy/MM/dd")}\n" +
+                $"📌 Estado: {proyecto.Estado}\n\n" +
+                "📖 Descripción:\n" +
+                $"{proyecto.Descripcion}\n\n" +
+                $"👨‍💼 Director del proyecto: {directorProyecto.Nombre + " " + directorProyecto.Apellido}\n" +
+                $"🏢 Área temática: {areaTematica.NombreArea}";
+
+                contenedor.Controls.Add(infoProyecto);
+
+                //Boton eliminar proyecto
+
+                Button eliminarProyecto = new Button();
+
+                eliminarProyecto.Name = proyecto.IdProyecto.ToString();
+                eliminarProyecto.Text = "✖"; // símbolo más estilizado que "X"
+                eliminarProyecto.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                eliminarProyecto.Size = new Size(25, 40);
+                eliminarProyecto.FlatStyle = FlatStyle.Flat;
+                eliminarProyecto.FlatAppearance.BorderSize = 0;
+                eliminarProyecto.BackColor = Color.FromArgb(220, 53, 69); // rojo moderno (tipo Bootstrap)
+                eliminarProyecto.ForeColor = Color.White;
+                eliminarProyecto.Cursor = Cursors.Hand;
+                eliminarProyecto.Location = new Point(350, 0);
+                eliminarProyecto.FlatAppearance.MouseOverBackColor = Color.FromArgb(200, 35, 51);
+                eliminarProyecto.FlatAppearance.MouseDownBackColor = Color.FromArgb(180, 30, 40);
+                eliminarProyecto.Click += (s, e) =>
+                {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este proyecto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        Proyecto proyectoAEliminar = new Proyecto();
+                        proyectoAEliminar.elimnarProyecto(int.Parse(eliminarProyecto.Name));
+
+                        panelPresentacion.Controls.Clear();
+                        cargarProyectos();
+                    }
+                };
+
+                panelPie.Controls.Add(eliminarProyecto);
+
+
+                //Boton para finalizar proyecto
+                Button finalizarProyecto = new Button();
+                finalizarProyecto.Name = proyecto.IdProyecto.ToString();
+                finalizarProyecto.Text = "✔"; // símbolo de check
+                finalizarProyecto.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                finalizarProyecto.Size = new Size(25, 40);
+                finalizarProyecto.FlatStyle = FlatStyle.Flat;
+                finalizarProyecto.FlatAppearance.BorderSize = 0;
+                finalizarProyecto.BackColor = Color.FromArgb(40, 167, 69); // verde tipo Bootstrap
+                finalizarProyecto.ForeColor = Color.White;
+                finalizarProyecto.Cursor = Cursors.Hand;
+                finalizarProyecto.Location = new Point(320, 0);
+                finalizarProyecto.FlatAppearance.MouseOverBackColor = Color.FromArgb(200, 35, 51);
+                finalizarProyecto.FlatAppearance.MouseDownBackColor = Color.FromArgb(180, 30, 40);
+
+                finalizarProyecto.Click += (s, e) =>
+                {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas Finalizar este proyecto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        Proyecto proyectoAActualizar = new Proyecto();
+                        proyectoAActualizar.actualizarProyecto(int.Parse(finalizarProyecto.Name.ToString()), "Finalizado");
+
+
+                        panelPresentacion.Controls.Clear();
+                        cargarProyectos();
+                    }
+                };
+
+                panelPie.Controls.Add(finalizarProyecto);
 
                 // Fin contenedor proyecto
 
-                panelPresentacion.Controls.Add(temp);
+                contenedor.Controls.Add(panelCabecera);
+                contenedor.Controls.Add(panelPie);
+                panelPresentacion.Controls.Add(contenedor);
+                
 
             }
 
             //Finaliza la presentacion de los proyectos
 
             
+        }
+
+        //Evento para actualizar la lista de proyectos
+        private void actualizarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelPresentacion.Controls.Clear();
+            cargarProyectos();
+        }
+
+        private void nosotrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Nosotros nosotros = new Nosotros();
+            nosotros.ShowDialog();
         }
     }
 }

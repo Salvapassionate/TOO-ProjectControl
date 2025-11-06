@@ -147,6 +147,12 @@
     <Compile Include="Views\Autenticasion\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Nosotros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Nosotros.Designer.cs">
+      <DependentUpon>Nosotros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\vistaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Autenticasion\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Nosotros.resx">
+      <DependentUpon>Nosotros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\vistaPrincipal.resx">
       <DependentUpon>vistaPrincipal.cs</DependentUpon>

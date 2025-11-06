@@ -363,6 +363,17 @@ namespace ProyectoTOO.Controller
 
         }
 
+        public void elimnarProyecto(int idProyecto)
+        {
+            ProyectoModel proyectoModel = new ProyectoModel();
+            proyectoModel.eliminarProyecto(idProyecto);
+        }
+
+        public void actualizarProyecto(int id, string estado)
+        {
+            ProyectoModel proyectoModel = new ProyectoModel();
+            proyectoModel.actualizarEstadoProyecto(id, estado);
+        }
 
     }
 
