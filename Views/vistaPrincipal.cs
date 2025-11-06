@@ -16,12 +16,11 @@ namespace ProyectoTOO.Views
     public partial class vistaPrincipal : Form
     {
         public static Usuario _usuarioLogueado;
-        List<Proyecto> listaProyectos = new List<Proyecto>();
+        
 
         public vistaPrincipal()
         {
             InitializeComponent();
-            cargarProyectos();
 
 
         }
@@ -84,6 +83,7 @@ namespace ProyectoTOO.Views
                 this.Close();
             }
 
+            cargarProyectos();
 
         }
 
@@ -135,21 +135,57 @@ namespace ProyectoTOO.Views
         }
 
 
-        private void cargarProyectos()
+        public void cargarProyectos()
         {
+            Proyecto proyectos = new Proyecto();
+            DirectorProyecto directorProyecto = new DirectorProyecto();
+            AreaTematica areaTematica = new AreaTematica();
 
+            List<Proyecto> listaProyectos = proyectos.ListarProyecto();
+            List<DirectorProyecto> listaDirectores = directorProyecto.listarDirectores();
+            List<AreaTematica> listAreas = areaTematica.listarAreasTematicas();
 
-            for (int i = 0; i < 4; i++)
+            foreach (Proyecto proyecto in listaProyectos)
             {
+                
 
-
-                //En esta parte va la presentacion de los proyectos
+                //Contenedor de los proyectos
                 Panel temp = new Panel();
-                temp.Name = "panelProyecto";
-                temp.Size = new Size(400, 300);
+                temp.Name = proyecto.IdProyecto.ToString(); //El nombre del panel sera el nombre del proyecto
+                temp.Size = new Size(300, 300);
                 temp.Margin = new Padding(10);
-                temp.BackColor = Color.LightGray;
-                //temp.Dock = DockStyle.Left;
+                temp.BackColor = Color.FromArgb(158, 180, 193);
+                temp.AutoScroll = true;
+
+                // Titulo del contenedor del proyecto
+                Label titulo = new Label();
+                titulo.Font = new Font("Segoe UI", 11);
+                titulo.ForeColor = titulo.ForeColor = Color.FromArgb(17, 75, 95);
+                titulo.Text = proyecto.NombreProyecto.ToString();
+                titulo.Dock = DockStyle.Top;
+                titulo.TextAlign = ContentAlignment.MiddleCenter;
+                temp.Controls.Add(titulo);
+
+                //Contenido del cuerpo
+
+                Label estado = new Label();
+                estado.Font = new Font("Segoe UI", 11);
+                titulo.ForeColor = titulo.ForeColor = Color.FromArgb(17, 75, 95);
+                estado.Text = proyecto.Estado.ToString();
+                estado.Dock = DockStyle.Fill;
+                titulo.TextAlign = ContentAlignment.MiddleLeft;
+                temp.Controls.Add(estado);
+
+                //Pie del contenedor
+                directorProyecto = listaDirectores.Find(a => a.IdUser == _usuarioLogueado.IdUsuario.ToString());
+                Label director = new Label();
+                director.Font = new Font("Segoe UI", 11);
+                director.Text = "Director:" + directorProyecto.Nombre.ToString() +" "+ directorProyecto.Apellido;
+                director.Dock = DockStyle.Bottom;
+                director.TextAlign = ContentAlignment.MiddleCenter;
+                temp.Controls.Add(director);
+
+                // Fin contenedor proyecto
 
                 panelPresentacion.Controls.Add(temp);
 

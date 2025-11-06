@@ -65,11 +65,11 @@ namespace ProyectoTOO.Model
 
         public List<Proyecto> listaProyectos()
         {
-            List<Proyecto> listaAreasTematicas = new List<Proyecto>();
+            List<Proyecto> listaProyectos = new List<Proyecto>();
 
             try
             {
-                string query = "SELECT nombreProyecto, descripcionProyecto, fechaInicio, fechaFin, estado, idAreaTematica, idDirectorProyecto FROM proyecto";
+                string query = "SELECT idProyecto, nombreProyecto, descripcionProyecto, fechaInicio, fechaFin, estado, idAreaTematica, idDirectorProyecto FROM proyecto";
                 MySqlCommand cmd = new MySqlCommand(query, conexion.ObtenerConexion());
 
                 conexion.AbrirConexion();
@@ -84,16 +84,16 @@ namespace ProyectoTOO.Model
                     Proyecto proyecto = new Proyecto()
                     {
                         IdProyecto = reader.GetInt32("idProyecto"),
-                        NombreProyecto = reader.GetString("nombreArea"),
-                        Descripcion = reader.GetString("descripcionArea"),
+                        NombreProyecto = reader.GetString("nombreProyecto"),
+                        Descripcion = reader.GetString("descripcionProyecto"),
                         FechaInicio = reader.GetDateTime("fechaInicio"),
                         FechaFin = reader.GetDateTime("fechaFin"),
                         Estado = reader.GetString("estado"),
-                        IdAreaTematica = reader.GetInt32("idAreaTematic"),
+                        IdAreaTematica = reader.GetInt32("idAreaTematica"),
                         IdDirectorProyecto = reader.GetInt32("idDirectorProyecto"),
                     };
 
-                    listaAreasTematicas.Add(proyecto);
+                    listaProyectos.Add(proyecto);
                 }
 
                 reader.Close();
@@ -113,7 +113,7 @@ namespace ProyectoTOO.Model
                 conexion.CerrarConexion();
             }
 
-            return listaAreasTematicas;
+            return listaProyectos;
         }
 
       

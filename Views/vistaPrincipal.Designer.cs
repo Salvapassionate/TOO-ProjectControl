@@ -34,6 +34,7 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarAreaTematicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarProyectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +51,7 @@
             this.investigadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadoAvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelPresentacion = new System.Windows.Forms.Panel();
-            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelPresentacion = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +113,15 @@
             this.editarCuentaToolStripMenuItem.Name = "editarCuentaToolStripMenuItem";
             this.editarCuentaToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
             this.editarCuentaToolStripMenuItem.Text = "Editar cuenta";
+            // 
+            // cerrarSesionToolStripMenuItem
+            // 
+            this.cerrarSesionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesionToolStripMenuItem.Image")));
+            this.cerrarSesionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -259,22 +268,12 @@
             // 
             // panelPresentacion
             // 
-            this.panelPresentacion.AutoScroll = true;
             this.panelPresentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(73)))), ((int)(((byte)(96)))));
             this.panelPresentacion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPresentacion.Location = new System.Drawing.Point(0, 72);
             this.panelPresentacion.Name = "panelPresentacion";
             this.panelPresentacion.Size = new System.Drawing.Size(1348, 649);
             this.panelPresentacion.TabIndex = 1;
-            // 
-            // cerrarSesionToolStripMenuItem
-            // 
-            this.cerrarSesionToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cerrarSesionToolStripMenuItem.Image")));
-            this.cerrarSesionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
-            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
-            this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
             // vistaPrincipal
             // 
@@ -308,7 +307,6 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarProyectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarProyectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarCuentaToolStripMenuItem;
-        private System.Windows.Forms.Panel panelPresentacion;
         private System.Windows.Forms.ToolStripMenuItem productosDesarrolladosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosEnDesarrolloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarAreaTematicaToolStripMenuItem;
@@ -319,5 +317,6 @@
         private System.Windows.Forms.ToolStripMenuItem nosotrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarInvestigadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel panelPresentacion;
     }
 }
