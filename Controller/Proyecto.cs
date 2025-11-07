@@ -2,6 +2,7 @@
 using ProyectoTOO.Validaciones;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -178,6 +179,46 @@ namespace ProyectoTOO.Controller
         public Usuario BuscarUsuarioPorCorreo(string correo)
         {
             return model.BuscarPorCorreo(correo);
+        }
+
+        public DataTable ObtenerUsuarios()
+        {
+            return model.ListarUsuarios();
+        }
+
+        public bool ActualizarCuenta(string idUsuario, string correo, string usuario, string contrasena)
+        {
+            return model.ActualizarUsuario(idUsuario, correo, usuario, contrasena);
+        }
+
+        public bool CambiarEstadoUsuario(string idUsuario, string nuevoEstado)
+        {
+            return model.CambiarEstado(idUsuario, nuevoEstado);
+        }
+    }
+
+    public class ReporteController
+    {
+        private ReporteModel reporteModel;
+
+        public ReporteController()
+        {
+            reporteModel = new ReporteModel();
+        }
+
+        public DataTable CargarReporteAreas()
+        {
+            return reporteModel.ObtenerReporteAreas();
+        }
+
+        public DataTable CargarReporteInvestigadores()
+        {
+            return reporteModel.ObtenerReporteInvestigadores();
+        }
+
+        public DataTable CargarReporteEstadoAvance()
+        {
+            return reporteModel.ObtenerReporteEstadoAvance();
         }
     }
 

@@ -233,6 +233,9 @@
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(167, 68);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            this.areasToolStripMenuItem.Click += new System.EventHandler(this.xAreasToolStripMenuItem_Click);
+            this.investigadorToolStripMenuItem.Click += new System.EventHandler(this.xInvestigadorToolStripMenuItem_Click);
+            this.estadoAvanceToolStripMenuItem.Click += new System.EventHandler(this.xEstadoAvanceToolStripMenuItem_Click);
             // 
             // areasToolStripMenuItem
             // 

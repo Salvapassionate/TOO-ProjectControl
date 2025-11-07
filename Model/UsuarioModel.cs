@@ -1,8 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using ProyectoTOO.Controller;
 using System;
-using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,6 +107,45 @@ namespace ProyectoTOO.Model
             conexion.CerrarConexion();
             return usuario;
 
+        }
+        public DataTable ListarUsuarios()
+        {
+            string query = "SELECT idUsuario, usuario, correo, rol, estadoUsuario, ultimaFechaDeIngreso FROM Usuario";
+            using (MySqlConnection conn = conexion.ObtenerConexion())
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public bool ActualizarUsuario(string idUsuario, string correo, string usuario, string contrasena)
+        {
+            string query = @"UPDATE Usuario 
+                             SET correo = @correo, usuario = @usuario, contrasena = @contrasena 
+                             WHERE idUsuario = @id";
+            using (MySqlConnection conn = conexion.ObtenerConexion())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@correo", correo);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@contrasena", contrasena);
+                cmd.Parameters.AddWithValue("@id", idUsuario);
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        public bool CambiarEstado(string idUsuario, string nuevoEstado)
+        {
+            string query = "UPDATE Usuario SET estadoUsuario = @estado WHERE idUsuario = @id";
+            using (MySqlConnection conn = conexion.ObtenerConexion())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@estado", nuevoEstado);
+                cmd.Parameters.AddWithValue("@id", idUsuario);
+                return cmd.ExecuteNonQuery() > 0;
+            }
         }
     }
 }

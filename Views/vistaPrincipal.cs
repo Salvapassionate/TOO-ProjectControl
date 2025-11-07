@@ -59,6 +59,36 @@ namespace ProyectoTOO.Views
             NuevoProyecto.ShowDialog();
 
         }
+        private void xAreasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Areas frm = new Areas();
+            frm.ShowDialog();
+        }
+
+        private void xInvestigadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Investigador frm = new Investigador();
+            frm.ShowDialog();
+        }
+
+        private void xEstadoAvanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadoAvance frm = new EstadoAvance();
+            frm.ShowDialog();
+        }
+
+        private void editarCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new EditarCuenta(_usuario.IdUsuario);
+            frm.ShowDialog();
+        }
+
+        private void gestionUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new GestionUsuarios();
+            frm.Show();
+        }
+
 
     }
 }
