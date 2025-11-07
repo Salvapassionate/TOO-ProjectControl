@@ -43,6 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreProyecto = new System.Windows.Forms.TextBox();
+            this.lbl_IdProyecto = new System.Windows.Forms.Label();
+            this.cmbxID_Proyecto = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +63,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.cmbxID_Proyecto);
+            this.groupBox1.Controls.Add(this.lbl_IdProyecto);
             this.groupBox1.Controls.Add(this.btnRegistrarProyecto);
             this.groupBox1.Controls.Add(this.dTFechaFin);
             this.groupBox1.Controls.Add(this.dTFechaInicio);
@@ -139,7 +143,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(48, 23);
+            this.label5.Location = new System.Drawing.Point(30, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(499, 24);
             this.label5.TabIndex = 14;
@@ -214,6 +218,29 @@
             this.txtNombreProyecto.Size = new System.Drawing.Size(486, 30);
             this.txtNombreProyecto.TabIndex = 5;
             // 
+            // lbl_IdProyecto
+            // 
+            this.lbl_IdProyecto.AutoSize = true;
+            this.lbl_IdProyecto.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_IdProyecto.ForeColor = System.Drawing.Color.White;
+            this.lbl_IdProyecto.Location = new System.Drawing.Point(35, 76);
+            this.lbl_IdProyecto.Name = "lbl_IdProyecto";
+            this.lbl_IdProyecto.Size = new System.Drawing.Size(127, 24);
+            this.lbl_IdProyecto.TabIndex = 30;
+            this.lbl_IdProyecto.Text = "ID_PROYECTO";
+            this.lbl_IdProyecto.Visible = false;
+            // 
+            // cmbxID_Proyecto
+            // 
+            this.cmbxID_Proyecto.BackColor = System.Drawing.Color.White;
+            this.cmbxID_Proyecto.ForeColor = System.Drawing.Color.Black;
+            this.cmbxID_Proyecto.FormattingEnabled = true;
+            this.cmbxID_Proyecto.Location = new System.Drawing.Point(221, 75);
+            this.cmbxID_Proyecto.Name = "cmbxID_Proyecto";
+            this.cmbxID_Proyecto.Size = new System.Drawing.Size(299, 30);
+            this.cmbxID_Proyecto.TabIndex = 31;
+            this.cmbxID_Proyecto.Visible = false;
+            // 
             // FormularioProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,5 +275,7 @@
         private System.Windows.Forms.DateTimePicker dTFechaFin;
         private System.Windows.Forms.DateTimePicker dTFechaInicio;
         private System.Windows.Forms.Button btnRegistrarProyecto;
+        public System.Windows.Forms.Label lbl_IdProyecto;
+        public System.Windows.Forms.ComboBox cmbxID_Proyecto;
     }
 }

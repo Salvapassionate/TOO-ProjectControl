@@ -375,6 +375,12 @@ namespace ProyectoTOO.Controller
             proyectoModel.actualizarEstadoProyecto(id, estado);
         }
 
+        public void actualizarProyecto(Proyecto proyecto)
+        {
+            ProyectoModel proyectoModel = new ProyectoModel();
+            proyectoModel.actualizarProyecto(proyecto);
+        }
+
     }
 
 

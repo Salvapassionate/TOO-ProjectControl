@@ -137,10 +137,10 @@ namespace ProyectoTOO.Views
                     devolverusuarioLogueado(); //Devuelve el usuario logueado si existe
 
                     MessageBox.Show(
-                          "¡Credenciales exitosas",// Texto del mensaje
-                          "¡Bienvenido! ",// Titulo del mensaje
-                          MessageBoxButtons.OK,         // Tipos de botones: OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore
-                          MessageBoxIcon.Information    // Tipo de icono Information, Warning, Error, Question
+                        "Inicio de sesión exitoso. ¡Nos alegra tenerte de vuelta!",
+                        "Acceso concedido",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
                     );
                     devolverusuarioLogueado(); //Devuelve el usuario logueado si existe
                     this.DialogResult = DialogResult.OK;

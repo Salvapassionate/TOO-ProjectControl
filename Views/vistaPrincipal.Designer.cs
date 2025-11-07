@@ -148,6 +148,7 @@
             this.editarProyectoToolStripMenuItem.Name = "editarProyectoToolStripMenuItem";
             this.editarProyectoToolStripMenuItem.Size = new System.Drawing.Size(312, 70);
             this.editarProyectoToolStripMenuItem.Text = "Editar proyecto";
+            this.editarProyectoToolStripMenuItem.Click += new System.EventHandler(this.editarProyectoToolStripMenuItem_Click);
             // 
             // actualizarProyectoToolStripMenuItem
             // 

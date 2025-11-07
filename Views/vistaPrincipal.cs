@@ -300,5 +300,44 @@ namespace ProyectoTOO.Views
             Nosotros nosotros = new Nosotros();
             nosotros.ShowDialog();
         }
+
+        private void editarProyectoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormularioProyecto proyectoAActualizar = new FormularioProyecto();
+            proyectoAActualizar.lbl_IdProyecto.Visible = true;
+            proyectoAActualizar.cmbxID_Proyecto.Visible = true;
+
+            Proyecto proyecto = new Proyecto();
+            DirectorProyecto directorProyecto = new DirectorProyecto();
+
+            // Obtenemos el director logueado
+            DirectorProyecto directorLogueado = directorProyecto.listarDirectores().Find(a => a.IdUser == _usuarioLogueado.IdUsuario);
+
+            if (directorLogueado == null)
+            {
+                MessageBox.Show("No se encontró el director logueado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Filtramos los proyectos del director logueado
+            List<Proyecto> listaProyectos = proyecto.ListarProyecto().FindAll(p => p.IdDirectorProyecto == directorLogueado.IdDirectorProyecto);
+
+            if (listaProyectos.Count == 0)
+            {
+                MessageBox.Show("No hay proyectos asociados a este director.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Cargamos los IDs de los proyectos en el ComboBox
+            foreach (Proyecto proj in listaProyectos)
+            {
+                proyectoAActualizar.cmbxID_Proyecto.Items.Add(proj.NombreProyecto);
+            }
+
+            proyectoAActualizar.ShowDialog();
+
+
+
+        }
     }
 }

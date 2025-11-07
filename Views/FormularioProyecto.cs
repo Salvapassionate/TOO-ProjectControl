@@ -133,7 +133,15 @@ namespace ProyectoTOO.Views
                         {
                             if (!String.IsNullOrEmpty(txtDescripcion.Text))
                             {
-                                proyecto.registrarProyecto(proyecto);
+
+                                if (lbl_IdProyecto.Visible==true)
+                                {
+                                    proyecto.actualizarProyecto(proyecto);
+                                }
+                                else
+                                {
+                                    proyecto.registrarProyecto(proyecto);
+                                }
 
                                 MessageBox.Show(
                                       "¡ El proyecto se registro exitosamente ! ",// Texto del mensaje
@@ -226,6 +234,8 @@ namespace ProyectoTOO.Views
             txtDescripcion.Clear();
             txtDescripcion.BackColor = Color.White;
             txtNombreProyecto.BackColor = Color.White;
+            lbl_IdProyecto.Visible = false;
+            cmbxID_Proyecto.Visible = false;
 
         }
 

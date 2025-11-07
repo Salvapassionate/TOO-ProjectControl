@@ -267,5 +267,62 @@ namespace ProyectoTOO.Model
             }
         }
 
+
+        public void actualizarProyecto(Proyecto proyecto)
+        {
+            try
+            {
+                string query = "UPDATE proyecto SET " +
+                               "nombreProyecto = @nombreProyecto, " +
+                               "descripcionProyecto = @descripcionProyecto, " +
+                               "fechaInicio = @fechaInicio, " +
+                               "fechaFin = @fechaFin, " +
+                               "estado = @estado, " +
+                               "idAreaTematica = @idAreaTematica, " +
+                               "idDirectorProyecto = @idDirectorProyecto " +
+                               "WHERE idProyecto = @idProyecto";
+
+                MySqlCommand cmd = new MySqlCommand(query, conexion.ObtenerConexion());
+                cmd.Parameters.AddWithValue("@nombreProyecto", proyecto.NombreProyecto);
+                cmd.Parameters.AddWithValue("@descripcionProyecto", proyecto.Descripcion);
+                cmd.Parameters.AddWithValue("@fechaInicio", proyecto.FechaInicio);
+                cmd.Parameters.AddWithValue("@fechaFin", proyecto.FechaFin);
+                cmd.Parameters.AddWithValue("@estado", proyecto.Estado);
+                cmd.Parameters.AddWithValue("@idAreaTematica", proyecto.IdAreaTematica);
+                cmd.Parameters.AddWithValue("@idDirectorProyecto", proyecto.IdDirectorProyecto);
+                cmd.Parameters.AddWithValue("@idProyecto", proyecto.IdProyecto); // este debe venir en el objeto
+
+                conexion.AbrirConexion();
+                int filasAfectadas = cmd.ExecuteNonQuery();
+                conexion.CerrarConexion();
+
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Proyecto actualizado correctamente.",
+                                    "Actualización exitosa",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el proyecto a actualizar.",
+                                    "Sin cambios",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el proyecto: " + ex.Message,
+                                "Error en la actualización",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexion.CerrarConexion();
+            }
+        }
+
     }
 }
