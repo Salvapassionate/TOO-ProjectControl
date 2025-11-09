@@ -24,9 +24,9 @@ namespace ProyectoTOO.Model
         //Pedro 
 
         private string servidor = "localhost";
-        private string bd = "gestion_proyectos";
+        private string bd = "proyectoInvestigador";
         private string usuario = "root";
-        private string clave = "Too115";
+        private string clave = "";
         private string puerto = "3306";
 
         /// <summary>

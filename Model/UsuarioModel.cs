@@ -2,6 +2,7 @@
 using ProyectoTOO.Controller;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -170,6 +171,52 @@ namespace ProyectoTOO.Model
             reader.Close();
             conexion.CerrarConexion();
             return usuario;
+        }
+
+        public DataTable ListarUsuarios()
+        {
+            string query = "SELECT idUsuario, correo, rol, estadoUsuario, ultimaFechaDeIngreso FROM usuario";
+            using (MySqlConnection conn = conexion.ObtenerConexion())
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public bool ActualizarUsuario(string idUsuario, string correo, string usuario, string contrasena)
+        {
+            string query = @"UPDATE usuario 
+                             SET correo = @correo, contrasena = @contrasena 
+                             WHERE idUsuario = @idUsuario";
+            using (MySqlConnection conn = conexion.ObtenerConexion())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@correo", correo);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@contrasena", contrasena);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                // conexion.CerrarConexion();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        public bool CambiarEstado(string idUsuario, string nuevoEstado)
+        {
+            string query = "UPDATE usuario SET estadoUsuario = @estadoUsuario WHERE idUsuario = @idUsuario";
+
+            using (MySqlConnection conn = conexion.ObtenerConexion())
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@estadoUsuario", nuevoEstado);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                //conexion.CerrarConexion();
+                //conexion.AbrirConexion();
+                return cmd.ExecuteNonQuery() > 0;
+            }
         }
 
     }

@@ -50,6 +50,7 @@
             this.estadoAvanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelPresentacion = new System.Windows.Forms.FlowLayoutPanel();
+            this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             this.nuevoToolStripMenuItem,
             this.agregarAreaTematicaToolStripMenuItem,
             this.editarCuentaToolStripMenuItem,
+            this.gestionDeUsuariosToolStripMenuItem,
             this.cerrarSesionToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
@@ -111,6 +113,7 @@
             this.editarCuentaToolStripMenuItem.Name = "editarCuentaToolStripMenuItem";
             this.editarCuentaToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
             this.editarCuentaToolStripMenuItem.Text = "Editar cuenta";
+            this.editarCuentaToolStripMenuItem.Click += new System.EventHandler(this.editarCuentaToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 
@@ -223,6 +226,7 @@
             this.areasToolStripMenuItem.Name = "areasToolStripMenuItem";
             this.areasToolStripMenuItem.Size = new System.Drawing.Size(291, 70);
             this.areasToolStripMenuItem.Text = "X Areas";
+            this.areasToolStripMenuItem.Click += new System.EventHandler(this.areasToolStripMenuItem_Click);
             // 
             // investigadorToolStripMenuItem
             // 
@@ -231,6 +235,7 @@
             this.investigadorToolStripMenuItem.Name = "investigadorToolStripMenuItem";
             this.investigadorToolStripMenuItem.Size = new System.Drawing.Size(291, 70);
             this.investigadorToolStripMenuItem.Text = "X Investigador";
+            this.investigadorToolStripMenuItem.Click += new System.EventHandler(this.investigadorToolStripMenuItem_Click);
             // 
             // estadoAvanceToolStripMenuItem
             // 
@@ -239,6 +244,7 @@
             this.estadoAvanceToolStripMenuItem.Name = "estadoAvanceToolStripMenuItem";
             this.estadoAvanceToolStripMenuItem.Size = new System.Drawing.Size(291, 70);
             this.estadoAvanceToolStripMenuItem.Text = " X Estado Avance";
+            this.estadoAvanceToolStripMenuItem.Click += new System.EventHandler(this.estadoAvanceToolStripMenuItem_Click);
             // 
             // nosotrosToolStripMenuItem
             // 
@@ -258,6 +264,14 @@
             this.panelPresentacion.Name = "panelPresentacion";
             this.panelPresentacion.Size = new System.Drawing.Size(1348, 649);
             this.panelPresentacion.TabIndex = 1;
+            // 
+            // gestionDeUsuariosToolStripMenuItem
+            // 
+            this.gestionDeUsuariosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("gestionDeUsuariosToolStripMenuItem.Image")));
+            this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
+            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
+            this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion De Usuarios";
+            this.gestionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeUsuariosToolStripMenuItem_Click);
             // 
             // vistaPrincipal
             // 
@@ -300,5 +314,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultarInvestigadoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.FlowLayoutPanel panelPresentacion;
+        private System.Windows.Forms.ToolStripMenuItem gestionDeUsuariosToolStripMenuItem;
     }
 }

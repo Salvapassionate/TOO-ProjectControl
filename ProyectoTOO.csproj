@@ -113,15 +113,34 @@
     <Compile Include="Model\InstitucionModel.cs" />
     <Compile Include="Model\InvestigadorModel.cs" />
     <Compile Include="Model\ProyectoModel.cs" />
+    <Compile Include="Model\ReporteModel.cs" />
     <Compile Include="Model\UsuarioModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones\Validador.cs" />
+    <Compile Include="Views\Areas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Areas.Designer.cs">
+      <DependentUpon>Areas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Autenticasion\CambiarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Autenticasion\CambiarContraseña.Designer.cs">
       <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditarCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EditarCuenta.Designer.cs">
+      <DependentUpon>EditarCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EstadoAvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EstadoAvance.Designer.cs">
+      <DependentUpon>EstadoAvance.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormularioAreaTematica.cs">
       <SubType>Form</SubType>
@@ -147,6 +166,18 @@
     <Compile Include="Views\Autenticasion\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\GestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GestionUsuarios.Designer.cs">
+      <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvestigadorReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InvestigadorReporte.Designer.cs">
+      <DependentUpon>InvestigadorReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Nosotros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,8 +200,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Areas.resx">
+      <DependentUpon>Areas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Autenticasion\CambiarContraseña.resx">
       <DependentUpon>CambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EditarCuenta.resx">
+      <DependentUpon>EditarCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EstadoAvance.resx">
+      <DependentUpon>EstadoAvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormularioAreaTematica.resx">
       <DependentUpon>FormularioAreaTematica.cs</DependentUpon>
@@ -183,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Autenticasion\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\GestionUsuarios.resx">
+      <DependentUpon>GestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InvestigadorReporte.resx">
+      <DependentUpon>InvestigadorReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Nosotros.resx">
       <DependentUpon>Nosotros.cs</DependentUpon>

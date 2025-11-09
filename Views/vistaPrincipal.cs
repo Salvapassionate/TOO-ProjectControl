@@ -16,7 +16,8 @@ namespace ProyectoTOO.Views
     public partial class vistaPrincipal : Form
     {
         public static Usuario _usuarioLogueado;
-        
+        private Usuario _usuario;
+
 
         public vistaPrincipal()
         {
@@ -337,6 +338,35 @@ namespace ProyectoTOO.Views
             proyectoAActualizar.ShowDialog();
 
 
+
+        }
+
+        private void areasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Areas frm = new Areas();
+            frm.ShowDialog();
+        }
+
+        private void investigadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InvestigadorReporte frm = new InvestigadorReporte();
+            frm.ShowDialog();
+        }
+
+        private void estadoAvanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EstadoAvance frm = new EstadoAvance();
+            frm.ShowDialog();
+        }
+
+        private void editarCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new EditarCuenta(_usuario.IdUsuario);
+            frm.ShowDialog();
+        }
+
+        private void gestionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
