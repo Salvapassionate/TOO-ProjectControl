@@ -23,7 +23,8 @@ namespace ProyectoTOO.Model
             cmd.Parameters.AddWithValue("@correo", correo);
             cmd.Parameters.AddWithValue("@contrasena", password);
 
-            conexion.AbrirConexion();
+            conn.Open();
+            //conexion.AbrirConexion();
             var reader = cmd.ExecuteReader();
 
             if (reader.Read())
@@ -38,7 +39,7 @@ namespace ProyectoTOO.Model
             }
 
             reader.Close();
-            conexion.CerrarConexion();
+            //conexion.CerrarConexion();
             return usuario;
         }
 
@@ -48,15 +49,16 @@ namespace ProyectoTOO.Model
                      VALUES (@correo, @contrasena, @rol, 'Activo', NOW());";
 
             MySqlConnection conn = conexion.ObtenerConexion();
+            conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             cmd.Parameters.AddWithValue("@correo", usuario.Correo);
             cmd.Parameters.AddWithValue("@contrasena", usuario.Pass);
             cmd.Parameters.AddWithValue("@rol", usuario.Rol);
 
-            conexion.AbrirConexion();
+            //conexion.AbrirConexion();
             int resultado = cmd.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            //conexion.CerrarConexion();
 
             return resultado > 0;
         }
@@ -64,15 +66,17 @@ namespace ProyectoTOO.Model
         public bool CambiarPassword(int idUsuario, string nuevaPassword)
         {
             string query = "UPDATE usuario SET contrasena = @contrasena WHERE idUsuario = @idUsuario";
-
+            
             MySqlConnection conn = conexion.ObtenerConexion();
+            conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
+
             cmd.Parameters.AddWithValue("@contrasena", nuevaPassword);
             cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
 
-            conexion.AbrirConexion();
+            //conexion.AbrirConexion();
             int resultado = cmd.ExecuteNonQuery();
-            conexion.CerrarConexion();
+            //conexion.CerrarConexion();
 
             return resultado > 0;
         }
@@ -85,8 +89,8 @@ namespace ProyectoTOO.Model
             MySqlConnection conn = conexion.ObtenerConexion();
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@correo", correo);
-
-            conexion.AbrirConexion();
+            conn.Open();
+            //conexion.AbrirConexion();
             var reader = cmd.ExecuteReader();
 
             if (reader.Read())
@@ -104,13 +108,14 @@ namespace ProyectoTOO.Model
             }
 
             reader.Close();
-            conexion.CerrarConexion();
+          
+            //conexion.CerrarConexion();
             return usuario;
 
         }
         public DataTable ListarUsuarios()
         {
-            string query = "SELECT idUsuario, usuario, correo, rol, estadoUsuario, ultimaFechaDeIngreso FROM Usuario";
+            string query = "SELECT idUsuario, correo, rol, estadoUsuario, ultimaFechaDeIngreso FROM usuario";
             using (MySqlConnection conn = conexion.ObtenerConexion())
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
@@ -122,28 +127,34 @@ namespace ProyectoTOO.Model
 
         public bool ActualizarUsuario(string idUsuario, string correo, string usuario, string contrasena)
         {
-            string query = @"UPDATE Usuario 
-                             SET correo = @correo, usuario = @usuario, contrasena = @contrasena 
-                             WHERE idUsuario = @id";
+            string query = @"UPDATE usuario 
+                             SET correo = @correo, contrasena = @contrasena 
+                             WHERE idUsuario = @idUsuario";
             using (MySqlConnection conn = conexion.ObtenerConexion())
             {
+                conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@correo", correo);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@contrasena", contrasena);
-                cmd.Parameters.AddWithValue("@id", idUsuario);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+               // conexion.CerrarConexion();
                 return cmd.ExecuteNonQuery() > 0;
             }
         }
 
         public bool CambiarEstado(string idUsuario, string nuevoEstado)
         {
-            string query = "UPDATE Usuario SET estadoUsuario = @estado WHERE idUsuario = @id";
+            string query = "UPDATE usuario SET estadoUsuario = @estadoUsuario WHERE idUsuario = @idUsuario";
+
             using (MySqlConnection conn = conexion.ObtenerConexion())
             {
+                conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@estado", nuevoEstado);
-                cmd.Parameters.AddWithValue("@id", idUsuario);
+                cmd.Parameters.AddWithValue("@estadoUsuario", nuevoEstado);
+                cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                //conexion.CerrarConexion();
+                //conexion.AbrirConexion();
                 return cmd.ExecuteNonQuery() > 0;
             }
         }

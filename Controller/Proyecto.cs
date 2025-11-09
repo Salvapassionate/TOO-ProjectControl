@@ -220,6 +220,12 @@ namespace ProyectoTOO.Controller
         {
             return reporteModel.ObtenerReporteEstadoAvance();
         }
+      
+
+        public void ExportarExcel(DataTable dt, string ruta)
+        {
+            reporteModel.ExportarExcel(dt, ruta);
+        }
     }
 
 

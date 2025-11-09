@@ -83,7 +83,7 @@ namespace ProyectoTOO.Views
             frm.ShowDialog();
         }
 
-        private void gestionUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gestionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new GestionUsuarios();
             frm.Show();

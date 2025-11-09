@@ -114,6 +114,7 @@
             this.editarCuentaToolStripMenuItem.Name = "editarCuentaToolStripMenuItem";
             this.editarCuentaToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
             this.editarCuentaToolStripMenuItem.Text = "Editar cuenta";
+            this.editarCuentaToolStripMenuItem.Click += new System.EventHandler(this.editarCuentaToolStripMenuItem_Click);
             // 
             // gestionDeUsuariosToolStripMenuItem
             // 
@@ -122,6 +123,7 @@
             this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
             this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(335, 70);
             this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de usuarios";
+            this.gestionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeUsuariosToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -233,9 +235,6 @@
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(167, 68);
             this.reportesToolStripMenuItem.Text = "Reportes";
-            this.areasToolStripMenuItem.Click += new System.EventHandler(this.xAreasToolStripMenuItem_Click);
-            this.investigadorToolStripMenuItem.Click += new System.EventHandler(this.xInvestigadorToolStripMenuItem_Click);
-            this.estadoAvanceToolStripMenuItem.Click += new System.EventHandler(this.xEstadoAvanceToolStripMenuItem_Click);
             // 
             // areasToolStripMenuItem
             // 
@@ -244,6 +243,7 @@
             this.areasToolStripMenuItem.Name = "areasToolStripMenuItem";
             this.areasToolStripMenuItem.Size = new System.Drawing.Size(291, 70);
             this.areasToolStripMenuItem.Text = "X Areas";
+            this.areasToolStripMenuItem.Click += new System.EventHandler(this.xAreasToolStripMenuItem_Click);
             // 
             // investigadorToolStripMenuItem
             // 
@@ -252,6 +252,7 @@
             this.investigadorToolStripMenuItem.Name = "investigadorToolStripMenuItem";
             this.investigadorToolStripMenuItem.Size = new System.Drawing.Size(291, 70);
             this.investigadorToolStripMenuItem.Text = "X Investigador";
+            this.investigadorToolStripMenuItem.Click += new System.EventHandler(this.xInvestigadorToolStripMenuItem_Click);
             // 
             // estadoAvanceToolStripMenuItem
             // 
@@ -260,6 +261,7 @@
             this.estadoAvanceToolStripMenuItem.Name = "estadoAvanceToolStripMenuItem";
             this.estadoAvanceToolStripMenuItem.Size = new System.Drawing.Size(291, 70);
             this.estadoAvanceToolStripMenuItem.Text = " X Estado Avance";
+            this.estadoAvanceToolStripMenuItem.Click += new System.EventHandler(this.xEstadoAvanceToolStripMenuItem_Click);
             // 
             // nosotrosToolStripMenuItem
             // 

@@ -45,8 +45,10 @@ namespace ProyectoTOO.Model
         /// </returns>
         public MySqlConnection ObtenerConexion()
         {
-            return conexion;
+            string cadenaConexion = $"Server={servidor};Port={puerto};Database={bd};Uid={usuario};Pwd={clave};";
+            return new MySqlConnection(cadenaConexion);
         }
+        
 
         /// <summary>
         /// Este metodo abre una conexion hacia la base de datos, consulta si no esta abierta, si no lo esta abre una conexion 
