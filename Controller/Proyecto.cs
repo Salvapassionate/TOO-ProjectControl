@@ -375,10 +375,13 @@ namespace ProyectoTOO.Controller
             proyectoModel.actualizarEstadoProyecto(id, estado);
         }
 
-        public void actualizarProyecto(Proyecto proyecto)
+        public Proyecto buscarProyecto(String nombreProyecto)
         {
+            Proyecto proj;
             ProyectoModel proyectoModel = new ProyectoModel();
-            proyectoModel.actualizarProyecto(proyecto);
+            proj = proyectoModel.BuscarProyectoPorNombre(nombreProyecto);
+
+            return proj;
         }
 
     }

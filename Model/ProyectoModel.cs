@@ -150,6 +150,10 @@ namespace ProyectoTOO.Model
                     };
                 }
 
+                if(proyecto == null) {
+                    MessageBox.Show("No se encontro proyecto");
+                }
+
                 reader.Close();
                 conexion.CerrarConexion();
             }

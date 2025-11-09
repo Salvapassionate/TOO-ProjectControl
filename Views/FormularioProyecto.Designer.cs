@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioProyecto));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbxNombre_Proyecto = new System.Windows.Forms.ComboBox();
+            this.lbl_IdProyecto = new System.Windows.Forms.Label();
             this.btnRegistrarProyecto = new System.Windows.Forms.Button();
             this.dTFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dTFechaInicio = new System.Windows.Forms.DateTimePicker();
@@ -43,8 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombreProyecto = new System.Windows.Forms.TextBox();
-            this.lbl_IdProyecto = new System.Windows.Forms.Label();
-            this.cmbxID_Proyecto = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.cmbxID_Proyecto);
+            this.groupBox1.Controls.Add(this.cmbxNombre_Proyecto);
             this.groupBox1.Controls.Add(this.lbl_IdProyecto);
             this.groupBox1.Controls.Add(this.btnRegistrarProyecto);
             this.groupBox1.Controls.Add(this.dTFechaFin);
@@ -84,6 +84,30 @@
             this.groupBox1.Size = new System.Drawing.Size(572, 699);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // cmbxNombre_Proyecto
+            // 
+            this.cmbxNombre_Proyecto.BackColor = System.Drawing.Color.White;
+            this.cmbxNombre_Proyecto.ForeColor = System.Drawing.Color.Black;
+            this.cmbxNombre_Proyecto.FormattingEnabled = true;
+            this.cmbxNombre_Proyecto.Location = new System.Drawing.Point(221, 75);
+            this.cmbxNombre_Proyecto.Name = "cmbxNombre_Proyecto";
+            this.cmbxNombre_Proyecto.Size = new System.Drawing.Size(299, 30);
+            this.cmbxNombre_Proyecto.TabIndex = 31;
+            this.cmbxNombre_Proyecto.Visible = false;
+            this.cmbxNombre_Proyecto.SelectedIndexChanged += new System.EventHandler(this.cmbxID_Proyecto_SelectedIndexChanged);
+            // 
+            // lbl_IdProyecto
+            // 
+            this.lbl_IdProyecto.AutoSize = true;
+            this.lbl_IdProyecto.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_IdProyecto.ForeColor = System.Drawing.Color.White;
+            this.lbl_IdProyecto.Location = new System.Drawing.Point(35, 76);
+            this.lbl_IdProyecto.Name = "lbl_IdProyecto";
+            this.lbl_IdProyecto.Size = new System.Drawing.Size(185, 24);
+            this.lbl_IdProyecto.TabIndex = 30;
+            this.lbl_IdProyecto.Text = "NOMBRE_PROYECTO";
+            this.lbl_IdProyecto.Visible = false;
             // 
             // btnRegistrarProyecto
             // 
@@ -218,29 +242,6 @@
             this.txtNombreProyecto.Size = new System.Drawing.Size(486, 30);
             this.txtNombreProyecto.TabIndex = 5;
             // 
-            // lbl_IdProyecto
-            // 
-            this.lbl_IdProyecto.AutoSize = true;
-            this.lbl_IdProyecto.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_IdProyecto.ForeColor = System.Drawing.Color.White;
-            this.lbl_IdProyecto.Location = new System.Drawing.Point(35, 76);
-            this.lbl_IdProyecto.Name = "lbl_IdProyecto";
-            this.lbl_IdProyecto.Size = new System.Drawing.Size(127, 24);
-            this.lbl_IdProyecto.TabIndex = 30;
-            this.lbl_IdProyecto.Text = "ID_PROYECTO";
-            this.lbl_IdProyecto.Visible = false;
-            // 
-            // cmbxID_Proyecto
-            // 
-            this.cmbxID_Proyecto.BackColor = System.Drawing.Color.White;
-            this.cmbxID_Proyecto.ForeColor = System.Drawing.Color.Black;
-            this.cmbxID_Proyecto.FormattingEnabled = true;
-            this.cmbxID_Proyecto.Location = new System.Drawing.Point(221, 75);
-            this.cmbxID_Proyecto.Name = "cmbxID_Proyecto";
-            this.cmbxID_Proyecto.Size = new System.Drawing.Size(299, 30);
-            this.cmbxID_Proyecto.TabIndex = 31;
-            this.cmbxID_Proyecto.Visible = false;
-            // 
             // FormularioProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,6 +277,6 @@
         private System.Windows.Forms.DateTimePicker dTFechaInicio;
         private System.Windows.Forms.Button btnRegistrarProyecto;
         public System.Windows.Forms.Label lbl_IdProyecto;
-        public System.Windows.Forms.ComboBox cmbxID_Proyecto;
+        public System.Windows.Forms.ComboBox cmbxNombre_Proyecto;
     }
 }

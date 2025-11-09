@@ -136,7 +136,7 @@ namespace ProyectoTOO.Views
 
                                 if (lbl_IdProyecto.Visible==true)
                                 {
-                                    proyecto.actualizarProyecto(proyecto);
+                                    proyecto.actualizarProyecto(proyecto.IdProyecto, cmbxNombre_Proyecto.SelectedItem.ToString());
                                 }
                                 else
                                 {
@@ -235,10 +235,31 @@ namespace ProyectoTOO.Views
             txtDescripcion.BackColor = Color.White;
             txtNombreProyecto.BackColor = Color.White;
             lbl_IdProyecto.Visible = false;
-            cmbxID_Proyecto.Visible = false;
+            cmbxNombre_Proyecto.Visible = false;
 
         }
 
+        private void cmbxID_Proyecto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Variables
+            Proyecto proyecto = new Proyecto();
 
+            proyecto = proyecto.buscarProyecto(cmbxNombre_Proyecto.SelectedItem.ToString());
+
+
+            if (proyecto != null)
+            {
+                dTFechaInicio.Value = proyecto.FechaInicio;
+                dTFechaFin.Value = proyecto.FechaFin;
+                txtNombreProyecto.Text = proyecto.NombreProyecto;
+                txtDescripcion.Text = proyecto.Descripcion;
+            }
+            else
+            {
+                MessageBox.Show("El proyecto no se encontro en la base de datos");
+            }
+
+
+        }
     }
 }

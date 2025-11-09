@@ -152,7 +152,7 @@ namespace ProyectoTOO.Views
             directorProyecto = listaDirectores.Find(a => a.IdUser == _usuarioLogueado.IdUsuario);
 
             //Filtramos los proyectos del director logueado
-            listaProyectos = listaProyectos.FindAll(p => p.IdDirectorProyecto == directorProyecto.IdDirectorProyecto);
+            listaProyectos = listaProyectos.FindAll(p => p.IdDirectorProyecto == directorProyecto.IdDirectorProyecto && p.Estado=="En progreso");
 
 
             foreach (Proyecto proyecto in listaProyectos)
@@ -305,7 +305,7 @@ namespace ProyectoTOO.Views
         {
             FormularioProyecto proyectoAActualizar = new FormularioProyecto();
             proyectoAActualizar.lbl_IdProyecto.Visible = true;
-            proyectoAActualizar.cmbxID_Proyecto.Visible = true;
+            proyectoAActualizar.cmbxNombre_Proyecto.Visible = true;
 
             Proyecto proyecto = new Proyecto();
             DirectorProyecto directorProyecto = new DirectorProyecto();
@@ -320,7 +320,7 @@ namespace ProyectoTOO.Views
             }
 
             // Filtramos los proyectos del director logueado
-            List<Proyecto> listaProyectos = proyecto.ListarProyecto().FindAll(p => p.IdDirectorProyecto == directorLogueado.IdDirectorProyecto);
+            List<Proyecto> listaProyectos = proyecto.ListarProyecto().FindAll(p => p.IdDirectorProyecto == directorLogueado.IdDirectorProyecto && p.Estado == "En progreso");
 
             if (listaProyectos.Count == 0)
             {
@@ -331,7 +331,7 @@ namespace ProyectoTOO.Views
             // Cargamos los IDs de los proyectos en el ComboBox
             foreach (Proyecto proj in listaProyectos)
             {
-                proyectoAActualizar.cmbxID_Proyecto.Items.Add(proj.NombreProyecto);
+                proyectoAActualizar.cmbxNombre_Proyecto.Items.Add(proj.NombreProyecto);
             }
 
             proyectoAActualizar.ShowDialog();
